@@ -5,7 +5,11 @@
 const SAVED_CONTENTS_KEY =
     "mesbah_saved_contents";
 
+const SAVED_PLAYLISTS_KEY =
+    "mesbah_saved_playlists";
 
+const HISTORY_PLAYLISTS_KEY =
+    "mesbah_history_playlists";
 /* =========================================================
    GET CONTENT
 ========================================================= */
@@ -74,12 +78,74 @@ async function sharePlaylistContent(contentId) {
 
         if (!content) return;
 
+
+        /* =========================
+           CONTENT INFO
+        ========================= */
+
         const title =
             content.querySelector("title")
                 ?.textContent
                 .trim() || "";
 
-        const url =
+        const speaker =
+            content.querySelector("speaker")
+                ?.textContent
+                .trim() || "";
+
+        const type =
+            content.querySelector("type")
+                ?.textContent
+                .trim() || "";
+
+
+        /* =========================
+           DETERMINE MEDIA
+        ========================= */
+
+        let mediaUrl = "";
+        let mediaType = "";
+
+
+        if (type === "video") {
+
+            mediaUrl =
+                content.querySelector("video")
+                    ?.textContent
+                    .trim() || "";
+
+            mediaType = "video";
+
+        }
+
+        else if (type === "audio") {
+
+            mediaUrl =
+                content.querySelector("audio")
+                    ?.textContent
+                    .trim() || "";
+
+            mediaType = "audio";
+
+        }
+
+
+        if (!mediaUrl) {
+
+            alert(
+                "فایل قابل اشتراک پیدا نشد."
+            );
+
+            return;
+
+        }
+
+
+        /* =========================
+           PAGE URL
+        ========================= */
+
+        const pageUrl =
             `${window.location.origin}` +
             `${window.location.pathname.replace(
                 "playlist.html",
@@ -87,23 +153,162 @@ async function sharePlaylistContent(contentId) {
             )}` +
             `?id=${encodeURIComponent(contentId)}`;
 
-        if (navigator.share) {
 
-            await navigator.share({
-                title,
-                text: title,
-                url
-            });
+        /* =========================
+           SHARE TEXT
+        ========================= */
 
-        } else {
+        let shareText =
+            `«${title}»\n\n`;
 
-            await navigator.clipboard.writeText(url);
 
-            alert("لینک کپی شد");
+        if (speaker) {
+
+            shareText +=
+                `گوینده: ${speaker}\n\n`;
 
         }
 
-    } catch (error) {
+
+        shareText +=
+            `از سامانه مصباح\n`;
+
+        shareText +=
+            pageUrl;
+
+
+        /* =========================
+           GET MEDIA
+        ========================= */
+
+        const mediaResponse =
+            await fetch(
+                mediaUrl
+            );
+
+
+        if (!mediaResponse.ok) {
+
+            throw new Error(
+                "فایل رسانه‌ای پیدا نشد."
+            );
+
+        }
+
+
+        const blob =
+            await mediaResponse.blob();
+
+
+        /* =========================
+           FILE NAME
+        ========================= */
+
+        let fileName =
+            mediaUrl
+                .split("/")
+                .pop()
+                .split("?")[0];
+
+
+        if (!fileName) {
+
+            fileName =
+                mediaType === "video"
+                    ? "mesbah-video.mp4"
+                    : "mesbah-audio.mp3";
+
+        }
+
+
+        /* =========================
+           CREATE FILE
+        ========================= */
+
+        const mediaFile =
+            new File(
+                [blob],
+                fileName,
+                {
+                    type:
+                        blob.type ||
+                        (
+                            mediaType === "video"
+                                ? "video/mp4"
+                                : "audio/mpeg"
+                        )
+                }
+            );
+
+
+        /* =========================
+           SHARE FILE
+        ========================= */
+
+        if (
+            navigator.share &&
+            navigator.canShare &&
+            navigator.canShare({
+                files: [mediaFile]
+            })
+        ) {
+
+            await navigator.share({
+
+                title: title,
+
+                text: shareText,
+
+                files: [mediaFile]
+
+            });
+
+            return;
+        }
+
+
+        /* =========================
+           SHARE WITHOUT FILE
+        ========================= */
+
+        if (navigator.share) {
+
+            await navigator.share({
+
+                title: title,
+
+                text: shareText,
+
+                url: pageUrl
+
+            });
+
+            return;
+        }
+
+
+        /* =========================
+           FALLBACK
+        ========================= */
+
+        await navigator.clipboard.writeText(
+            shareText
+        );
+
+        alert(
+            "لینک و اطلاعات محتوا کپی شد."
+        );
+
+    }
+
+    catch (error) {
+
+        if (
+            error.name ===
+            "AbortError"
+        ) {
+            return;
+        }
 
         console.error(
             "PLAYLIST SHARE ERROR:",
@@ -314,6 +519,351 @@ function loadPlaylistSaveStates() {
 
 }
 
+/* =========================================================
+   PLAYLIST HEADER
+========================================================= */
+
+function getSavedPlaylists() {
+
+    try {
+
+        return JSON.parse(
+            localStorage.getItem(
+                SAVED_PLAYLISTS_KEY
+            )
+        ) || [];
+
+    } catch {
+
+        return [];
+
+    }
+
+}
+
+
+function savePlaylists(playlists) {
+
+    localStorage.setItem(
+        SAVED_PLAYLISTS_KEY,
+        JSON.stringify(playlists)
+    );
+
+}
+
+
+/* =========================================================
+   SAVE PLAYLIST
+========================================================= */
+
+function savePlaylist(playlistId) {
+
+    let saved =
+        getSavedPlaylists();
+
+    const id =
+        String(playlistId);
+
+
+    if (saved.includes(id)) {
+
+        saved =
+            saved.filter(
+                item => item !== id
+            );
+
+    } else {
+
+        saved.push(id);
+
+    }
+
+
+    savePlaylists(saved);
+
+    updatePlaylistSaveButton();
+
+}
+
+
+/* =========================================================
+   UPDATE SAVE BUTTON
+========================================================= */
+
+function updatePlaylistSaveButton() {
+
+    const button =
+        document.querySelector(
+            ".playlist-save-button"
+        );
+
+    if (!button) return;
+
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+    const playlistId =
+        params.get("id");
+
+
+    if (!playlistId) return;
+
+
+    const saved =
+        getSavedPlaylists();
+
+    const isSaved =
+        saved.includes(
+            String(playlistId)
+        );
+
+
+    const icon =
+        button.querySelector("i");
+
+
+    if (isSaved) {
+
+        button.classList.add("saved");
+
+        if (icon) {
+
+            icon.className =
+                "fa-solid fa-bookmark";
+
+        }
+
+        button.title =
+            "حذف از مجموعه‌های ذخیره‌شده";
+
+    } else {
+
+        button.classList.remove("saved");
+
+        if (icon) {
+
+            icon.className =
+                "fa-regular fa-bookmark";
+
+        }
+
+        button.title =
+            "ذخیره مجموعه";
+
+    }
+
+}
+
+
+/* =========================================================
+   PLAYLIST HISTORY
+========================================================= */
+
+function addPlaylistToHistory(playlistId) {
+
+    try {
+
+        let history =
+            JSON.parse(
+                localStorage.getItem(
+                    HISTORY_PLAYLISTS_KEY
+                )
+            ) || [];
+
+
+        const id =
+            String(playlistId);
+
+
+        history =
+            history.filter(
+                item => item !== id
+            );
+
+
+        history.unshift(id);
+
+
+        /*
+         * فقط ۵۰ مجموعه اخیر
+         */
+
+        history =
+            history.slice(0, 50);
+
+
+        localStorage.setItem(
+            HISTORY_PLAYLISTS_KEY,
+            JSON.stringify(history)
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "PLAYLIST HISTORY ERROR:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   SHARE PLAYLIST
+========================================================= */
+
+async function sharePlaylist() {
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+    const playlistId =
+        params.get("id");
+
+
+    if (!playlistId) return;
+
+
+    const title =
+        document.querySelector(
+            "#playlist-title"
+        )?.textContent.trim()
+        || "مجموعه";
+
+
+    const url =
+        `${window.location.origin}` +
+        `${window.location.pathname}` +
+        `?id=${encodeURIComponent(playlistId)}`;
+
+
+    try {
+
+        if (navigator.share) {
+
+            await navigator.share({
+                title,
+                text: title,
+                url
+            });
+
+        } else {
+
+            await navigator.clipboard.writeText(
+                url
+            );
+
+            alert("لینک مجموعه کپی شد");
+
+        }
+
+    } catch (error) {
+
+        if (
+            error.name !== "AbortError"
+        ) {
+
+            console.error(
+                "PLAYLIST SHARE ERROR:",
+                error
+            );
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   PLAYLIST HEADER EVENTS
+========================================================= */
+
+document.addEventListener(
+    "click",
+    event => {
+
+        const saveButton =
+            event.target.closest(
+                ".playlist-save-button"
+            );
+
+
+        if (saveButton) {
+
+            const params =
+                new URLSearchParams(
+                    window.location.search
+                );
+
+            const playlistId =
+                params.get("id");
+
+
+            if (playlistId) {
+
+                savePlaylist(
+                    playlistId
+                );
+
+            }
+
+            return;
+
+        }
+
+
+        const shareButton =
+            event.target.closest(
+                ".playlist-share-button"
+            );
+
+
+        if (shareButton) {
+
+            sharePlaylist();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   PLAYLIST INIT
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+        const playlistId =
+            params.get("id");
+
+
+        if (!playlistId) return;
+
+
+        updatePlaylistSaveButton();
+
+        addPlaylistToHistory(
+            playlistId
+        );
+
+    }
+);
 
 /* =========================================================
    EVENTS

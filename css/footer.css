@@ -22,10 +22,10 @@
     display: grid;
     grid-template-columns:
         1.5fr
+        1fr
         1.3fr
-        1.3fr
+        1fr
         1.3fr;
-        /* 1fr */
 
     gap: 40px;
 }
@@ -130,10 +130,7 @@
     font-weight: 600;
 }
 
-.footer-contact a {
-    color: inherit;
-    text-decoration: underline;
-}
+
 /* =========================================================
    FOOTER BOTTOM
 ========================================================= */
