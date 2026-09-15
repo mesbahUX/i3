@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>نتایج - مصباح</title>
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- Global -->
+
+    <link
+        rel="stylesheet"
+        href="css/global.css">
+
+
+    <!-- Results -->
+
+    <link
+        rel="stylesheet"
+        href="css/results.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <div
+        id="header"
+        data-component="components/header.html">
+    </div>
+
+
+
+    <!-- ================= RESULTS ================= -->
+
+    <main class="page">
+
+
+        <section class="page-header">
+
+            <a href="index.html" class="back-button">
+                <i class="fa-solid fa-house"></i>
+                بازگشت به خانه
+            </a>
+
+            <h1 id="results-title">
+            </h1>
+
+        </section>
+
+        <!-- ================= FILTER ================= -->
+
+        <div
+            id="filter"
+            data-component="components/filter.html">
+        </div>
+
+
+        <!-- ================= CARDS ================= -->
+
+        <div class="results-grid">
+
+            <!--
+                JS اینجا به صورت خودکار:
+                - بخش ویدیوها
+                - بخش صوت‌ها
+                - کارت‌ها
+                - دکمه نمایش نتایج بیشتر
+
+                را ایجاد می‌کند.
+            -->
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <div
+        id="footer"
+        data-component="components/footer.html">
+    </div>
+
+
+
+    <!-- ================= JS ================= -->
+
+    <script src="js/global.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/cards.js"></script>
+    <script src="js/cards-loader.js"></script>
+    <script src="js/results.js"></script>
+
+
+</body>
+
+</html>

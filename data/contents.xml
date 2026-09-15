@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<contents>
+
+    <!-- =====================================================
+         NEWEST
+    ====================================================== -->
+
+    <content id="1">
+
+        <title>عنوان محتوای نمونه</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>video</type>
+
+        <topic>توحید</topic>
+
+        <tags>
+            <tag>توحید</tag>
+            <tag>سخنرانی</tag>
+            <tag>آموزشی</tag>
+            <tag>مباحث اعتقادی</tag>
+        </tags>
+
+        <image>pics/content/content1.jpg</image>
+
+        <cover>pics/content/content1.jpg</cover>
+
+        <video>media/video/content1.mp4</video>
+
+        <audio>media/audio/content1.mp3</audio>
+
+        <text>
+            این متن نمونه برای محتوای شماره یک است.
+        </text>
+
+        <transcript>
+            در این بخش متن پیاده‌شده ویدئوی محتوای شماره یک قرار می‌گیرد. در این سخنرانی موضوع اصلی به صورت مرحله‌به‌مرحله توضیح داده می‌شود و نکات مختلفی درباره مباحث مطرح‌شده مورد بررسی قرار می‌گیرد. سخنران در ادامه تلاش می‌کند ارتباط میان مفاهیم اصلی را توضیح دهد و نمونه‌هایی برای درک بهتر موضوع ارائه کند. این متن صرفاً برای نمایش قابلیت نمایش خلاصه و متن کامل استفاده شده است و می‌توان با انتخاب گزینه «بیشتر» ادامه متن را مشاهده کرد.
+        </transcript>
+
+        <sources>
+            <source>
+                <title>منبع نمونه</title>
+                <url>https://example.com/source1</url>
+            </source>
+        </sources>
+
+    </content>
+
+
+    <content id="9">
+
+        <title>عنوان محتوای نمونه</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>audio</type>
+
+        <topic>توحید</topic>
+
+        <tags>
+            <tag>توحید</tag>
+            <tag>سخنرانی</tag>
+            <tag>صوت</tag>
+            <tag>آموزشی</tag>
+        </tags>
+
+        <image>pics/content/content9.jpg</image>
+
+        <cover>pics/content/content9.jpg</cover>
+
+        <audio>media/audio/content1.mp3</audio>
+
+        <text>
+            متن توضیحی محتوای صوتی شماره دو.
+        </text>
+
+        <transcript>
+            در این بخش متن پیاده‌شده ویدئوی محتوای شماره یک قرار می‌گیرد. در این سخنرانی موضوع اصلی به صورت مرحله‌به‌مرحله توضیح داده می‌شود و نکات مختلفی درباره مباحث مطرح‌شده مورد بررسی قرار می‌گیرد. سخنران در ادامه تلاش می‌کند ارتباط میان مفاهیم اصلی را توضیح دهد و نمونه‌هایی برای درک بهتر موضوع ارائه کند. این متن صرفاً برای نمایش قابلیت نمایش خلاصه و متن کامل استفاده شده است و می‌توان با انتخاب گزینه «بیشتر» ادامه متن را مشاهده کرد.
+        </transcript>
+
+        <sources>
+            <source>
+                <title>منبع نمونه</title>
+                <url>https://example.com/source2</url>
+            </source>
+        </sources>
+
+    </content>
+
+
+    <content id="2">
+
+        <title>عنوان محتوای نمونه</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>video</type>
+
+        <topic>مطالعات اسلامی</topic>
+
+        <tags>
+            <tag>مقاله</tag>
+            <tag>مطالعات اسلامی</tag>
+            <tag>پژوهشی</tag>
+            <tag>آموزشی</tag>
+        </tags>
+
+        <image>pics/content/content2.jpg</image>
+
+        <cover>pics/content/content2.jpg</cover>
+
+        <text>
+            متن کامل مقاله نمونه شماره سه در این قسمت قرار می‌گیرد.
+        </text>
+
+        <sources>
+            <source>
+                <title>منبع نمونه</title>
+                <url>https://example.com/source3</url>
+            </source>
+        </sources>
+
+    </content>
+
+
+    <content id="3">
+
+        <title>عنوان محتوای نمونه</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>video</type>
+
+        <topic>معاد</topic>
+
+        <tags>
+            <tag>سخنرانی</tag>
+            <tag>معاد</tag>
+            <tag>آموزشی</tag>
+            <tag>ویدئو</tag>
+        </tags>
+
+        <image>pics/content/content3.jpg</image>
+
+        <cover>pics/content/content3.jpg</cover>
+
+        <video>media/video/content1.mp4</video>
+
+        <transcript>
+            در این قسمت متن پیاده‌شده ویدئوی شماره چهار قرار دارد. محتوای این جلسه به بررسی یکی از موضوعات مهم می‌پردازد و سخنران تلاش می‌کند ابعاد مختلف آن را با زبانی ساده توضیح دهد. در ادامه جلسه، نکات مهم‌تری مطرح می‌شود و ارتباط میان موضوع اصلی و مسائل مرتبط نیز مورد بررسی قرار می‌گیرد. این متن عمداً طولانی‌تر شده است تا حالت نمایش محدود متن و گزینه «بیشتر» در صفحه محتوا به‌خوبی قابل آزمایش باشد.
+        </transcript>
+
+        <sources>
+            <source>
+                <title>منبع نمونه</title>
+                <url>https://example.com/source4</url>
+            </source>
+        </sources>
+
+    </content>
+
+
+
+    <!-- =====================================================
+         MOST VIEWED
+    ====================================================== -->
+
+    <content id="4">
+
+        <title>عنوان محتوای پربازدید</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>video</type>
+
+        <audio>media/audio/content1.mp3</audio>
+
+        <topic>معاد</topic>
+
+        <tags>
+            <tag>پربازدید</tag>
+            <tag>سخنرانی</tag>
+            <tag>معاد</tag>
+            <tag>ویدئو</tag>
+        </tags>
+
+        <image>pics/content/content4.jpg</image>
+
+        <cover>pics/content/content4.jpg</cover>
+
+        <video>media/video/content1.mp4</video>
+
+        <transcript>
+            متن پیاده‌شده ویدئوی شماره پنج در این قسمت قرار می‌گیرد. در این جلسه سخنران درباره موضوع اصلی محتوا صحبت می‌کند و نکات مختلفی را از زوایای گوناگون مورد بررسی قرار می‌دهد. ابتدا مفاهیم پایه توضیح داده می‌شوند و سپس ارتباط میان آن‌ها و مسائل مرتبط بیان می‌شود. در ادامه نیز مثال‌ها و توضیحات بیشتری ارائه می‌شود تا مخاطب بتواند موضوع را بهتر درک کند. این متن برای آزمایش قابلیت نمایش دو خط ابتدایی و باز شدن ادامه متن با گزینه «بیشتر» طولانی‌تر شده است.
+        </transcript>
+
+    </content>
+
+
+    <content id="10">
+
+        <title>عنوان محتوای پربازدید</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>audio</type>
+
+        <topic>عدل</topic>
+
+        <tags>
+            <tag>پربازدید</tag>
+            <tag>صوت</tag>
+            <tag>سخنرانی</tag>
+            <tag>آموزشی</tag>
+        </tags>
+
+        <image>pics/content/content10.jpg</image>
+
+        <cover>pics/content/content10.jpg</cover>
+
+        <audio>media/audio/content1.mp3</audio>
+
+        <text>
+            توضیحات مربوط به محتوای صوتی شماره شش.
+        </text>
+
+    </content>
+
+
+    <content id="11">
+
+        <title>عنوان محتوای پربازدید</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>audio</type>
+
+        <topic>مطالعات اسلامی</topic>
+
+        <tags>
+            <tag>پربازدید</tag>
+            <tag>مقاله</tag>
+            <tag>پژوهشی</tag>
+            <tag>مطالعات اسلامی</tag>
+        </tags>
+
+        <image>pics/content/content11.jpg</image>
+
+        <cover>pics/content/content11.jpg</cover>
+
+        <text>
+            متن کامل مقاله محتوای شماره هفت.
+        </text>
+
+        <sources>
+            <source>
+                <title>منبع مقاله</title>
+                <url>https://example.com/source7</url>
+            </source>
+        </sources>
+
+    </content>
+
+
+    <content id="5">
+
+        <title>عنوان محتوای پربازدید</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>video</type>
+        <audio>media/audio/content1.mp3</audio>
+
+        <topic>عدل</topic>
+
+        <tags>
+            <tag>پربازدید</tag>
+            <tag>ویدئو</tag>
+            <tag>سخنرانی</tag>
+            <tag>عدل</tag>
+        </tags>
+
+        <image>pics/content/content5.jpg</image>
+
+        <cover>pics/content/content5.jpg</cover>
+
+        <video>media/video/content1.mp4</video>
+
+        <transcript>
+            متن پیاده‌شده ویدئوی شماره هشت در این بخش قرار می‌گیرد. در این جلسه موضوع اصلی با جزئیات بیشتری بررسی می‌شود و سخنران تلاش می‌کند نکات مهم و کاربردی را برای مخاطب توضیح دهد. بخش ابتدایی سخنرانی به معرفی موضوع اختصاص دارد و در ادامه، مطالب مرتبط و نمونه‌های مختلف مطرح می‌شوند. در پایان نیز جمع‌بندی کوتاهی از مطالب ارائه‌شده صورت می‌گیرد. طول این متن برای تست قابلیت باز و بسته شدن متن پیاده‌شده افزایش داده شده است.
+        </transcript>
+
+    </content>
+
+
+
+    <!-- =====================================================
+         TOHID
+    ====================================================== -->
+
+    <content id="6">
+
+        <title>معارف توحیدی</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>video</type>
+
+        <topic>توحید</topic>
+
+        <tags>
+            <tag>توحید</tag>
+            <tag>عقاید</tag>
+            <tag>خداشناسی</tag>
+        </tags>
+
+        <image>pics/content/content6.jpg</image>
+
+        <cover>pics/content/content6.jpg</cover>
+
+        <video>media/video/content1.mp4</video>
+
+        <text>
+            بررسی معارف توحیدی و شناخت مبانی توحید .
+        </text>
+
+        <transcript>
+            متن پیاده‌شده سخنرانی معارف توحیدی در این قسمت قرار می‌گیرد. در ابتدای جلسه درباره مفهوم توحید و اهمیت شناخت درست آن صحبت می‌شود و سپس برخی از مبانی مهم این موضوع مورد بررسی قرار می‌گیرد. سخنران در ادامه به ارتباط میان شناخت خداوند و زندگی انسان اشاره می‌کند و تلاش می‌کند این مباحث را با مثال‌های قابل فهم توضیح دهد. بخش‌های بعدی سخنرانی نیز به بررسی دیدگاه‌های مختلف و پاسخ به برخی پرسش‌های مرتبط اختصاص دارد. این متن برای آزمایش قابلیت نمایش خلاصه و ادامه متن در صفحه محتوا طولانی‌تر شده است.
+        </transcript>
+
+        <sources>
+
+            <source>
+                <title>قرآن کریم</title>
+                <url>https://example.com/quran</url>
+            </source>
+
+            <source>
+                <title>منبع تکمیلی</title>
+                <url>https://example.com/source9</url>
+            </source>
+
+        </sources>
+
+    </content>
+
+
+    <content id="12">
+
+        <title>شناخت خداوند</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>audio</type>
+
+        <topic>توحید</topic>
+
+        <tags>
+            <tag>توحید</tag>
+            <tag>خداشناسی</tag>
+            <tag>عقاید</tag>
+            <tag>معارف اسلامی</tag>
+        </tags>
+
+        <image>pics/content/content12.jpg</image>
+
+        <cover>pics/content/content12.jpg</cover>
+
+        <audio>media/audio/content1.mp3</audio>
+
+        <text>
+            بررسی راه‌های شناخت خداوند و مباحث مربوط به معرفت الهی.
+        </text>
+
+    </content>
+
+
+    <content id="7">
+
+        <title>مراتب توحید</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>video</type>
+
+        <topic>توحید</topic>
+
+        <tags>
+            <tag>توحید</tag>
+            <tag>عقاید</tag>
+            <tag>مقاله</tag>
+            <tag>معارف اسلامی</tag>
+        </tags>
+
+        <image>pics/content/content7.jpg</image>
+
+        <cover>pics/content/content7.jpg</cover>
+
+        <text>
+            در این مقاله مراتب مختلف توحید و ارتباط آن‌ها با زندگی انسان بررسی می‌شود.
+        </text>
+
+        <sources>
+
+            <source>
+                <title>منبع اول</title>
+                <url>https://example.com/source11</url>
+            </source>
+
+            <source>
+                <title>منبع دوم</title>
+                <url>https://example.com/source11-2</url>
+            </source>
+
+        </sources>
+
+    </content>
+
+
+    <content id="8">
+
+        <title>توحید در زندگی</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>video</type>
+        <audio>media/audio/content1.mp3</audio>
+
+        <topic>توحید</topic>
+
+        <tags>
+            <tag>توحید</tag>
+            <tag>زندگی</tag>
+            <tag>عقاید</tag>
+            <tag>معارف اسلامی</tag>
+        </tags>
+
+        <image>pics/content/content8.jpg</image>
+
+        <cover>pics/content/content8.jpg</cover>
+
+        <video>media/video/content1.mp4</video>
+
+        <transcript>
+            متن پیاده‌شده جلسه توحید در زندگی در این بخش قرار دارد. در این جلسه تلاش می‌شود مفهوم توحید از حالت یک بحث صرفاً نظری خارج شود و ارتباط آن با زندگی روزمره انسان توضیح داده شود. سخنران درباره تأثیر باورهای توحیدی بر تصمیم‌ها، رفتارها و نگاه انسان به مسائل مختلف صحبت می‌کند. در ادامه نیز نمونه‌هایی از کاربرد این مباحث در زندگی فردی و اجتماعی مطرح می‌شود و نکات تکمیلی برای درک بهتر موضوع ارائه خواهد شد. این متن طولانی است تا عملکرد گزینه «بیشتر» در نمایش متن پیاده‌شده قابل آزمایش باشد.
+        </transcript>
+
+    </content>
+
+
+
+    <!-- =====================================================
+         MAAD
+    ====================================================== -->
+
+    <content id="17">
+
+        <title>زندگی پس از مرگ</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>video</type>
+        <audio>media/audio/content1.mp3</audio>
+
+        <topic>معاد</topic>
+
+        <tags>
+            <tag>معاد</tag>
+            <tag>آخرت</tag>
+            <tag>عقاید</tag>
+            <tag>معارف اسلامی</tag>
+        </tags>
+
+        <image>pics/content/content17.jpg</image>
+
+        <cover>pics/content/content17.jpg</cover>
+
+        <video>media/video/content1.mp4</video>
+
+        <text>
+            بررسی مسئله زندگی پس از مرگ و سرنوشت انسان در جهان آخرت.
+        </text>
+
+        <transcript>
+            متن پیاده‌شده سخنرانی زندگی پس از مرگ در این قسمت قرار می‌گیرد. در این جلسه موضوع زندگی انسان پس از مرگ از جنبه‌های مختلف بررسی می‌شود و درباره مفهوم آخرت و سرنوشت انسان مطالبی ارائه می‌شود. سخنران ابتدا به اهمیت مسئله معاد اشاره می‌کند و سپس برخی از پرسش‌های اساسی درباره زندگی پس از مرگ را مطرح و بررسی می‌کند. در ادامه نیز به ارتباط میان رفتار انسان در دنیا و نتایج آن در جهان آخرت پرداخته می‌شود. این متن به صورت طولانی‌تر نوشته شده تا قابلیت نمایش بخشی از متن و باز کردن ادامه آن با گزینه «بیشتر» تست شود.
+        </transcript>
+
+    </content>
+
+
+    <content id="13">
+
+        <title>حقیقت معاد</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>audio</type>
+
+        <topic>معاد</topic>
+
+        <tags>
+            <tag>معاد</tag>
+            <tag>آخرت</tag>
+            <tag>عقاید</tag>
+            <tag>سخنرانی</tag>
+        </tags>
+
+        <image>pics/content/content13.jpg</image>
+
+        <cover>pics/content/content13.jpg</cover>
+
+        <audio>media/audio/content1.mp3</audio>
+
+        <text>
+            بررسی حقیقت معاد و دلایل عقلی و نقلی آن.
+        </text>
+
+    </content>
+
+
+    <content id="14">
+
+        <title>دلایل اثبات معاد</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>audio</type>
+
+        <topic>معاد</topic>
+
+        <tags>
+            <tag>معاد</tag>
+            <tag>عقاید</tag>
+            <tag>قرآن</tag>
+            <tag>مقاله</tag>
+        </tags>
+
+        <image>pics/content/content14.jpg</image>
+
+        <cover>pics/content/content14.jpg</cover>
+
+        <text>
+            بررسی دلایل اثبات معاد از منظر قرآن و استدلال‌های عقلی.
+        </text>
+
+        <sources>
+
+            <source>
+                <title>قرآن کریم</title>
+                <url>https://example.com/quran</url>
+            </source>
+
+            <source>
+                <title>منبع تکمیلی</title>
+                <url>https://example.com/source15</url>
+            </source>
+
+        </sources>
+
+    </content>
+
+
+    <content id="18">
+
+        <title>معاد در قرآن</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>video</type>
+        <audio>media/audio/content1.mp3</audio>
+
+        <topic>quran</topic>
+
+        <tags>
+            <tag>معاد</tag>
+            <tag>قرآن</tag>
+            <tag>آخرت</tag>
+            <tag>عقاید</tag>
+        </tags>
+
+        <image>pics/content/content18.jpg</image>
+
+        <cover>pics/content/content18.jpg</cover>
+
+        <video>media/video/content1.mp4</video>
+
+        <transcript>
+            متن پیاده‌شده جلسه معاد در قرآن در این قسمت قرار می‌گیرد. در این جلسه آیاتی که درباره مسئله معاد و زندگی پس از مرگ سخن گفته‌اند مورد بررسی قرار می‌گیرند. سخنران تلاش می‌کند مفهوم آیات را در کنار یکدیگر توضیح دهد و ارتباط میان موضوعات مختلف را برای مخاطب روشن کند. در ادامه برخی نکات تفسیری و مفهومی نیز مطرح می‌شود و درباره اهمیت باور به معاد در نگاه قرآنی توضیحاتی ارائه خواهد شد. این متن برای تست نمایش دو خط ابتدایی و باز شدن کامل متن طراحی شده است.
+        </transcript>
+
+        <sources>
+
+            <source>
+                <title>آیات قرآن کریم</title>
+                <url>https://example.com/quran</url>
+            </source>
+
+        </sources>
+
+    </content>
+
+
+
+    <!-- =====================================================
+         IMAM ALI
+    ====================================================== -->
+
+    <content id="19">
+
+        <title>زندگی امیرالمؤمنین</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>video</type>
+
+        <topic>history</topic>
+
+        <tags>
+            <tag>امام علی</tag>
+            <tag>تاریخ</tag>
+            <tag>سیره</tag>
+            <tag>اهل‌بیت</tag>
+        </tags>
+
+        <image>pics/content/content19.jpg</image>
+
+        <cover>pics/content/content19.jpg</cover>
+
+        <video>media/video/content1.mp4</video>
+
+        <text>
+            بررسی زندگی امیرالمؤمنین علی علیه‌السلام.
+        </text>
+
+        <transcript>
+            متن پیاده‌شده جلسه زندگی امیرالمؤمنین در این قسمت قرار دارد. در این سخنرانی بخش‌هایی از زندگی حضرت علی علیه‌السلام و حوادث مهم دوران زندگی ایشان بررسی می‌شود. سخنران در ابتدا به شرایط تاریخی و اجتماعی آن دوران اشاره می‌کند و سپس به برخی از مهم‌ترین وقایع زندگی امیرالمؤمنین می‌پردازد. در ادامه نیز ویژگی‌های شخصیتی، اخلاقی و اجتماعی ایشان مورد بررسی قرار می‌گیرد و تلاش می‌شود تصویری جامع‌تر از سیره و زندگی ایشان ارائه شود. این متن برای آزمایش قابلیت نمایش محدود و کامل ترنسکریپت طولانی‌تر شده است.
+        </transcript>
+
+    </content>
+
+
+    <content id="15">
+
+        <title>دوران حکومت امام علی</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>audio</type>
+
+        <topic>history</topic>
+
+        <tags>
+            <tag>امام علی</tag>
+            <tag>تاریخ</tag>
+            <tag>حکومت</tag>
+            <tag>اهل‌بیت</tag>
+        </tags>
+
+        <image>pics/content/content15.jpg</image>
+
+        <cover>pics/content/content15.jpg</cover>
+
+        <audio>media/audio/content1.mp3</audio>
+
+        <text>
+            بررسی دوران حکومت امیرالمؤمنین علیه‌السلام.
+        </text>
+
+    </content>
+
+
+    <content id="16">
+
+        <title>سیره امیرالمؤمنین</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>audio</type>
+
+        <topic>seerah</topic>
+
+        <tags>
+            <tag>امام علی</tag>
+            <tag>سیره</tag>
+            <tag>اخلاق</tag>
+            <tag>مقاله</tag>
+        </tags>
+
+        <image>pics/content/content16.jpg</image>
+
+        <cover>pics/content/content16.jpg</cover>
+
+        <text>
+            بررسی سیره فردی، اجتماعی و سیاسی امیرالمؤمنین علیه‌السلام.
+        </text>
+
+        <sources>
+
+            <source>
+                <title>منبع اول</title>
+                <url>https://example.com/source19</url>
+            </source>
+
+        </sources>
+
+    </content>
+
+
+    <content id="20">
+
+        <title>فضایل امیرالمؤمنین</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>video</type>
+
+        <topic>ahlulbayt</topic>
+
+        <tags>
+            <tag>امام علی</tag>
+            <tag>فضایل</tag>
+            <tag>اهل‌بیت</tag>
+            <tag>سیره</tag>
+        </tags>
+
+        <image>pics/content/content20.jpg</image>
+
+        <cover>pics/content/content20.jpg</cover>
+
+        <video>media/video/content1.mp4</video>
+
+        <transcript>
+            متن پیاده‌شده جلسه فضایل امیرالمؤمنین در این قسمت قرار می‌گیرد. در این سخنرانی برخی از فضایل و ویژگی‌های برجسته حضرت علی علیه‌السلام بررسی می‌شود و نمونه‌هایی از زندگی ایشان برای توضیح بهتر موضوع ارائه خواهد شد. سخنران در ادامه درباره جایگاه اخلاقی و اجتماعی ایشان صحبت می‌کند و تلاش می‌کند ابعاد مختلف این موضوع را با استناد به مطالب تاریخی و روایی توضیح دهد. ادامه متن شامل توضیحات تکمیلی و جمع‌بندی مباحث مطرح‌شده در جلسه است و برای تست گزینه «بیشتر» عمداً طولانی‌تر شده است.
+        </transcript>
+
+    </content>
+
+
+
+    <!-- =====================================================
+         IMAM HASAN
+    ====================================================== -->
+
+    <content id="21">
+
+        <title>زندگی امام حسن مجتبی</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>video</type>
+
+        <topic>ahlulbayt</topic>
+
+        <tags>
+            <tag>امام حسن</tag>
+            <tag>اهل‌بیت</tag>
+            <tag>سیره</tag>
+            <tag>تاریخ</tag>
+        </tags>
+
+        <image>pics/content/content21.jpg</image>
+
+        <cover>pics/content/content21.jpg</cover>
+
+        <video>media/video/content1.mp4</video>
+
+        <text>
+            بررسی زندگی امام حسن مجتبی علیه‌السلام.
+        </text>
+
+        <transcript>
+            متن پیاده‌شده جلسه زندگی امام حسن مجتبی در این قسمت قرار دارد. در این جلسه بخش‌هایی از زندگی امام حسن علیه‌السلام از دوران کودکی تا دوره امامت ایشان مورد بررسی قرار می‌گیرد. سخنران درباره شرایط تاریخی و اجتماعی زمان زندگی ایشان توضیحاتی ارائه می‌کند و سپس به برخی از مهم‌ترین وقایع آن دوران می‌پردازد. در ادامه نیز ویژگی‌های اخلاقی، رفتاری و اجتماعی امام حسن مجتبی بررسی می‌شود و تلاش می‌شود ارتباط میان سیره ایشان و شرایط زمانه بهتر روشن شود. این متن طولانی‌تر از حالت معمول قرار داده شده تا نمایش دو خط ابتدایی و باز شدن ادامه متن با گزینه «بیشتر» قابل تست باشد.
+        </transcript>
+
+    </content>
+
+
+    <content id="22">
+
+        <title>صلح امام حسن</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>audio</type>
+
+        <topic>history</topic>
+
+        <tags>
+            <tag>امام حسن</tag>
+            <tag>صلح</tag>
+            <tag>تاریخ</tag>
+            <tag>اهل‌بیت</tag>
+        </tags>
+
+        <image>pics/content/content22.jpg</image>
+
+        <cover>pics/content/content22.jpg</cover>
+
+        <audio>media/audio/content1.mp3</audio>
+
+        <text>
+            بررسی زمینه‌ها، علل و نتایج صلح امام حسن مجتبی علیه‌السلام.
+        </text>
+
+    </content>
+
+
+    <content id="23">
+
+        <title>سیره امام حسن</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>audio</type>
+
+        <topic>seerah</topic>
+
+        <tags>
+            <tag>امام حسن</tag>
+            <tag>سیره</tag>
+            <tag>اخلاق</tag>
+            <tag>مقاله</tag>
+        </tags>
+
+        <image>pics/content/content23.jpg</image>
+
+        <cover>pics/content/content23.jpg</cover>
+
+        <text>
+            بررسی سیره و روش زندگی امام حسن مجتبی علیه‌السلام.
+        </text>
+
+        <sources>
+
+            <source>
+                <title>منبع اول</title>
+                <url>https://example.com/source23</url>
+            </source>
+
+        </sources>
+
+    </content>
+
+
+    <content id="24">
+
+        <title>فضایل امام حسن</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>video</type>
+
+        <topic>ahlulbayt</topic>
+
+        <tags>
+            <tag>امام حسن</tag>
+            <tag>فضایل</tag>
+            <tag>اهل‌بیت</tag>
+            <tag>سیره</tag>
+        </tags>
+
+        <image>pics/content/content24.jpg</image>
+
+        <cover>pics/content/content24.jpg</cover>
+
+        <video>media/video/content1.mp4</video>
+
+        <transcript>
+            متن پیاده‌شده جلسه فضایل امام حسن مجتبی در این بخش قرار می‌گیرد. در این جلسه به برخی از ویژگی‌های اخلاقی و شخصیتی امام حسن علیه‌السلام پرداخته می‌شود و نمونه‌هایی از زندگی ایشان برای توضیح بهتر مطالب مطرح خواهد شد. سخنران در ادامه درباره جایگاه ایشان در میان اهل‌بیت و شرایط اجتماعی دوران زندگی ایشان صحبت می‌کند. همچنین نکات تکمیلی درباره سیره و رفتار ایشان ارائه می‌شود و در پایان مطالب اصلی جلسه جمع‌بندی خواهد شد. این متن عمداً طولانی‌تر شده تا قابلیت نمایش خلاصه و متن کامل به‌وسیله گزینه «بیشتر» قابل آزمایش باشد.
+        </transcript>
+
+    </content>
+
+
+
+    <!-- =====================================================
+         BY PROFESSOR
+    ====================================================== -->
+
+    <content id="25">
+
+        <title>عنوان سخنرانی</title>
+
+        <speaker>استاد ...</speaker>
+
+        <type>video</type>
+
+        <topic>سخنرانی</topic>
+
+        <tags>
+            <tag>سخنرانی</tag>
+            <tag>استاد</tag>
+            <tag>آموزشی</tag>
+            <tag>ویدئو</tag>
+        </tags>
+
+        <image>pics/content/content25.jpg</image>
+
+        <cover>pics/content/content25.jpg</cover>
+
+        <video>media/video/content1.mp4</video>
+
+        <transcript>
+            متن پیاده‌شده سخنرانی شماره بیست و پنج در این قسمت قرار دارد. سخنران در این جلسه درباره موضوع اصلی سخنرانی توضیح می‌دهد و نکات مختلفی را برای مخاطبان مطرح می‌کند. در ابتدای جلسه مفاهیم اصلی معرفی می‌شوند و سپس هر یک از موضوعات با جزئیات بیشتری مورد بررسی قرار می‌گیرند. در ادامه مثال‌ها و توضیحات تکمیلی ارائه می‌شود تا درک مطالب برای مخاطب آسان‌تر باشد. در پایان نیز نکات مهم جلسه جمع‌بندی می‌شوند. این متن برای تست قابلیت نمایش دو خط اول و باز کردن متن کامل با گزینه «بیشتر» طولانی‌تر شده است.
+        </transcript>
+
+    </content>
+
+
+    <content id="26">
+
+        <title>عنوان سخنرانی</title>
+
+        <speaker>استاد ...</speaker>
+
+        <type>audio</type>
+
+        <topic>سخنرانی</topic>
+
+        <tags>
+            <tag>سخنرانی</tag>
+            <tag>استاد</tag>
+            <tag>صوت</tag>
+            <tag>آموزشی</tag>
+        </tags>
+
+        <image>pics/content/content26.jpg</image>
+
+        <cover>pics/content/content26.jpg</cover>
+
+        <audio>media/audio/content1.mp3</audio>
+
+        <text>
+            توضیحات مربوط به سخنرانی شماره بیست و شش.
+        </text>
+
+    </content>
+
+
+    <content id="27">
+
+        <title>عنوان سخنرانی</title>
+
+        <speaker>استاد ...</speaker>
+
+        <type>video</type>
+
+        <topic>سخنرانی</topic>
+
+        <tags>
+            <tag>سخنرانی</tag>
+            <tag>استاد</tag>
+            <tag>آموزشی</tag>
+            <tag>ویدئو</tag>
+        </tags>
+
+        <image>pics/content/content27.jpg</image>
+
+        <cover>pics/content/content27.jpg</cover>
+
+        <video>media/video/content1.mp4</video>
+
+        <text>
+            توضیحات مربوط به سخنرانی شماره بیست و هفت.
+        </text>
+
+        <transcript>
+            متن پیاده‌شده سخنرانی شماره بیست و هفت در این قسمت قرار می‌گیرد. در این جلسه موضوع اصلی از چند زاویه مختلف بررسی می‌شود و سخنران تلاش می‌کند مطالب را به صورت منظم و قابل فهم ارائه کند. ابتدا مقدمه‌ای درباره موضوع مطرح می‌شود و سپس نکات اصلی با توضیحات و مثال‌های مختلف مورد بررسی قرار می‌گیرند. در ادامه نیز برخی نکات تکمیلی و پرسش‌های مرتبط با موضوع مطرح می‌شود و در پایان خلاصه‌ای از مباحث جلسه ارائه خواهد شد. این متن طولانی‌تر شده تا امکان تست نمایش محدود و کامل ترنسکریپت فراهم باشد.
+        </transcript>
+
+    </content>
+
+
+    <content id="28">
+
+        <title>عنوان سخنرانی</title>
+
+        <speaker>استاد ...</speaker>
+
+        <type>audio</type>
+
+        <topic>سخنرانی</topic>
+
+        <tags>
+            <tag>سخنرانی</tag>
+            <tag>استاد</tag>
+            <tag>صوت</tag>
+            <tag>آموزشی</tag>
+        </tags>
+
+        <image>pics/content/content28.jpg</image>
+
+        <cover>pics/content/content28.jpg</cover>
+
+        <audio>media/audio/content1.mp3</audio>
+
+    </content>
+
+
+    <content id="29">
+
+        <title>عنوان</title>
+
+        <speaker>سخنران</speaker>
+
+        <type>video</type>
+
+        <topic>سخنرانی</topic>
+
+        <tags>
+            <tag>سخنرانی</tag>
+            <tag>ویدئو</tag>
+            <tag>آموزشی</tag>
+            <tag>معارف</tag>
+        </tags>
+
+        <image>pics/content/content29.jpg</image>
+
+        <cover>pics/content/content29.jpg</cover>
+
+        <video>media/video/content1.mp4</video>
+
+        <transcript>
+            متن پیاده‌شده ویدئوی شماره بیست و نه در این قسمت قرار می‌گیرد. در این سخنرانی موضوع اصلی با جزئیات مختلف بررسی می‌شود و سخنران تلاش می‌کند نکات مهم را به صورت مرحله‌به‌مرحله برای مخاطب توضیح دهد. در ادامه جلسه، مثال‌ها و توضیحات بیشتری ارائه می‌شود و ارتباط موضوع اصلی با مسائل مرتبط نیز مورد بررسی قرار می‌گیرد. در پایان، مهم‌ترین نکات مطرح‌شده جمع‌بندی می‌شوند تا مخاطب بتواند تصویر کامل‌تری از محتوای جلسه داشته باشد. این متن برای آزمایش قابلیت نمایش خلاصه و باز شدن متن کامل با گزینه «بیشتر» عمداً طولانی‌تر نوشته شده است.
+        </transcript>
+
+    </content>
+
+</contents>

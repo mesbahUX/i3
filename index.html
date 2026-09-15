@@ -1,0 +1,521 @@
+﻿<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>سامانه مصباح</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div
+        id="header"
+        data-component="components/header.html">
+    </div>
+
+    <main class="home-page">
+
+        <!-- ================== HOME HERO ================== -->
+        <section class="home-hero">
+            <div class="hero-slider">
+
+                <!-- SLIDE 1 -->
+                <div class="hero-slide active"
+                    style="background-image: url('pics/hero/hero1.jpg');">
+
+                    <div class="hero-slide-overlay"></div>
+
+                    <div class="hero-slide-content">
+
+                        <span class="hero-slide-label">
+                            ویژه
+                        </span>
+
+                        <h1>
+                            معارف توحیدی
+                        </h1>
+
+                        <p>
+                            مجموعه‌ای از سخنرانی‌ها و مطالب درباره توحید و شناخت خداوند
+                        </p>
+
+                        <button class="hero-slide-btn">
+                            مشاهده مطالب
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <!-- SLIDE 2 -->
+                 <div class="hero-slide"
+                    style="background-image: url('pics/hero/hero2.jpg');">
+
+                    <div class="hero-slide-overlay"></div>
+
+                    <div class="hero-slide-content">
+
+                        <span class="hero-slide-label">
+                            منتخب
+                        </span>
+
+                        <h1>
+                            امام حسن مجتبی (ع)
+                        </h1>
+
+                        <p>
+                            نگاهی به زندگی، سیره و شخصیت کریم اهل‌بیت
+                        </p>
+
+                        <button class="hero-slide-btn">
+                            مشاهده مطالب
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- SLIDE 3 -->
+                <div class="hero-slide"
+                    style="background-image: url('pics/hero/hero3.png');">
+
+                    <div class="hero-slide-overlay"></div>
+
+                    <div class="hero-slide-content">
+
+                        <span class="hero-slide-label">
+                            سخنرانی
+                        </span>
+
+                        <h1>
+                            تاریخ امیرالمؤمنین (ع)
+                        </h1>
+
+                        <p>
+                            مجموعه‌ای از سخنرانی‌ها درباره زندگی و تاریخ امیرالمؤمنین
+                        </p>
+
+                        <button class="hero-slide-btn">
+                            مشاهده مطالب
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <!-- SLIDER CONTROLS -->
+
+                <button class="hero-slider-arrow hero-slider-prev"
+                        aria-label="اسلاید قبلی">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <button class="hero-slider-arrow hero-slider-next"
+                        aria-label="اسلاید بعدی">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+
+                <!-- DOTS -->
+
+                <div class="hero-slider-dots">
+
+                    <button class="hero-dot active"
+                            data-slide="0"></button>
+
+                    <button class="hero-dot"
+                            data-slide="1"></button>
+
+                    <button class="hero-dot"
+                            data-slide="2"></button>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= HOME CONTENT ================= -->
+    <section class="home-content">
+
+        <!-- ================= FILTER ================= -->
+
+        <div
+            id="filter"
+            data-component="components/filter.html">
+        </div>
+
+        <!-- =====================================================
+            1. NEWEST
+        ====================================================== -->
+
+        <section class="content-group">
+
+            <h2 class="content-group-title">
+                تازه‌‌ها
+            </h2>
+
+            <!-- ---------------- VIDEO ---------------- -->
+            <section class="content-row">
+
+                <div class="content-row-header">
+
+                    <h2>
+                        ویدیو‌ها
+                    </h2>
+
+                    <a
+                        href="results.html?type=newest-video"
+                        class="view-all"
+                    >
+                        مشاهده همه
+
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="content-slider"
+                    data-xml="data/contents2.xml"
+                    data-type="video"
+                    data-ids="1-8"
+                ></div>
+
+            </section>
+
+            <!-- ---------------- AUDIO ---------------- -->
+            <section class="content-row">
+
+                <div class="content-row-header">
+
+                    <h2>
+                        صوت‌ها
+                    </h2>
+
+                    <a
+                        href="results.html?type=newest-audio"
+                        class="view-all"
+                    >
+                        مشاهده همه
+
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="content-slider"
+                    data-xml="data/contents2.xml"
+                    data-type="audio"
+                    data-ids="16-23"
+                ></div>
+
+            </section>
+
+            <!-- -------------- PLAYLISTS -------------- -->
+            <section class="content-row">
+
+                <div class="content-row-header">
+
+                    <h2>
+                        <!-- فهرست‌های پخش -->
+                         مجموعه‌ها
+                    </h2>
+
+                    <a
+                        href="results.html?type=newest-playlist"
+                        class="view-all"
+                    >
+                        مشاهده همه
+
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="content-slider"
+                    data-xml="data/playlists.xml"
+                    data-type="playlist"
+                ></div>
+
+            </section>
+
+        </section>
+
+        <!-- =====================================================
+            2. MOST VIEWED
+        ====================================================== -->
+        <section class="content-group">
+            <h2 class="content-group-title">
+                پربازدیدها
+            </h2>
+            
+            <!-- ---------------- VIDEO ---------------- -->
+            <section class="content-row">
+
+                <div class="content-row-header">
+
+                    <h2>
+                        ویدیو‌ها
+                    </h2>
+
+                    <a
+                        href="results.html?type=popular-video"
+                        class="view-all"
+                    >
+                        مشاهده همه
+
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="content-slider"
+                    data-xml="data/contents2.xml"
+                    data-type="video"
+                    data-ids="9-15"
+                ></div>
+
+            </section>
+
+            <!-- ---------------- AUDIO ---------------- -->
+            <section class="content-row">
+
+                <div class="content-row-header">
+
+                    <h2>
+                        صوت‌ها
+                    </h2>
+
+                    <a
+                        href="results.html?type=popular-audio"
+                        class="view-all"
+                    >
+                        مشاهده همه
+
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="content-slider"
+                    data-xml="data/contents2.xml"
+                    data-type="audio"
+                    data-ids="16-26"
+                ></div>
+
+            </section>
+
+        </section>
+
+        <!-- =====================================================
+            3. UPCOMING OCCASIONS
+        ====================================================== -->
+        <section class="content-group">
+
+            <h2 class="content-group-title">
+                مناسبت‌های پیش رو
+            </h2>
+
+            <!-- ---------------- TOPICS ---------------- -->
+            <section class="content-row">
+
+                <div class="content-row-header">
+
+                    <h2>
+                        دسته بندی‌ها
+                    </h2>
+
+                    <a
+                        href="topics.html"
+                        class="view-all"
+                    >
+                        مشاهده همه
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="content-slider"
+                    data-xml="data/topics.xml"
+                    data-type="topic"
+                ></div>
+
+            </section>
+
+            <!-- ---------------- VIDEO ---------------- -->
+            <section class="content-row">
+
+                <div class="content-row-header">
+
+                    <h2>
+                        ویدیو‌ها
+                    </h2>
+
+                    <a
+                        href="results.html?type=upcoming-video"
+                        class="view-all"
+                    >
+                        مشاهده همه
+
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="content-slider"
+                    data-xml="data/contents2.xml"
+                    data-type="video"
+                    data-ids="20-39"
+                ></div>
+
+            </section>
+
+            <!-- ---------------- AUDIO ---------------- -->
+            <section class="content-row">
+
+                <div class="content-row-header">
+
+                    <h2>
+                        صوت‌ها
+                    </h2>
+
+                    <a
+                        href="results.html?type=upcoming-audio"
+                        class="view-all"
+                    >
+                        مشاهده همه
+
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="content-slider"
+                    data-xml="data/contents2.xml"
+                    data-type="audio"
+                    data-ids="20-39"
+                ></div>
+
+            </section>
+        </section>
+
+        <!-- =====================================================
+            4.
+        ====================================================== -->
+        <section class="content-group">
+
+            <h2 class="content-group-title"></h2>
+            
+            <!-- =====================================================
+                4. SPEAKERS
+            ====================================================== -->
+<!-- 
+            <section class="content-row">
+
+                <div class="content-row-header">
+
+                    <h2>
+                        پدیدآوران 
+                    </h2>
+
+                    <a
+                        href="speakers.html"
+                        class="view-all"
+                    >
+                        مشاهده همه
+
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="content-slider"
+                    data-xml="data/speakers.xml"
+                ></div>
+
+            </section> -->
+
+            <!-- =====================================================
+                5. CATEGORIES
+            ====================================================== -->
+
+            <section class="content-row">
+
+                <div class="content-row-header">
+
+                    <h2>
+                        دسته بندی‌ها
+                    </h2>
+
+                    <a
+                        href="topics.html"
+                        class="view-all"
+                    >
+                        مشاهده همه
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="content-slider"
+                    data-xml="data/topics.xml"
+                    data-type="topic"
+                ></div>
+
+            </section>
+            
+        </section>
+
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <div
+        id="footer"
+        data-component="components/footer.html">
+    </div>
+
+    <script src="js/global.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/cards.js"></script>
+    <script src="js/rows.js"></script>
+
+</body>
+
+</html>

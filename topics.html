@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>مناسبت‌ها و موضوعات - مصباح</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- Global -->
+
+    <link
+        rel="stylesheet"
+        href="css/global.css">
+
+
+    <!-- Results -->
+
+    <link
+        rel="stylesheet"
+        href="css/topics.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <div
+        id="header"
+        data-component="components/header.html">
+    </div>
+
+
+    <!-- ================================
+         TOPICS PAGE
+    ================================= -->
+
+    <main class="page">
+        <section class="page-header">
+
+                <a href="index.html" class="back-button">
+                    <i class="fa-solid fa-house"></i>
+                    بازگشت به خانه
+                </a>
+
+                <h1>
+                    مناسبت‌ها و موضوعات
+                </h1>
+
+        </section>
+
+        <section class="topics-container">
+
+            <div
+                class="topics-grid cards-container"
+                data-xml="data/topics.xml"
+                data-type="topic"
+            ></div>
+
+        </section>
+
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <div
+        id="footer"
+        data-component="components/footer.html">
+    </div>
+
+    <script src="js/global.js"></script>
+    <script src="js/topics.js"></script>
+    <script src="js/cards.js"></script>
+    <script src="js/cards-loader.js"></script>
+
+
+</body>
+
+</html>
