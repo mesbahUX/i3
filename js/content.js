@@ -104,6 +104,8 @@ function renderContent(content) {
 
     const type = getText(content, "type");
 
+    updateContentGroups(type);
+
     if (type === "video") {
         renderVideo(content);
         return;
@@ -818,4 +820,47 @@ function renderContentInfo(content) {
                 )
             );
         });
+}
+
+/* =========================================================
+   CONTENT GROUP
+========================================================= */
+
+function updateContentGroups(type) {
+
+    const contentGroups =
+        document.querySelectorAll(".content-group");
+
+    if (!contentGroups.length) {
+        return;
+    }
+
+    contentGroups.forEach(group => {
+
+        const rows =
+            group.querySelectorAll(":scope > .content-row");
+
+        if (!rows.length) {
+            return;
+        }
+
+        /* اگر محتوا VIDEO است
+           ردیف اول VIDEO مخفی شود */
+
+        if (type === "video") {
+
+            rows[0].style.display = "none";
+
+        }
+
+        /* اگر محتوا AUDIO است
+           ردیف اول نمایش داده شود */
+
+        else {
+
+            rows[0].style.display = "";
+
+        }
+
+    });
 }
