@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
     const type =
-        params.get("type") || "newest";
+        params.get("type");
 
 
     setResultsTitle(type);
@@ -20,6 +20,227 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+/* =========================================================
+   SET RESULTS TITLE
+========================================================= */
+
+// function setResultsTitle(type) {
+
+//     const title =
+//         document.querySelector("#results-title");
+
+//     if (!title) {
+//         return;
+//     }
+
+
+//     const params =
+//         new URLSearchParams(
+//             window.location.search
+//         );
+
+
+//     const format =
+//         params.get("format");
+
+//     const topic =
+//         params.get("topic");
+
+//     const speaker =
+//         params.get("speaker");
+
+// const q =
+//     params.get("q");
+//     /* =========================================
+//        فارسی کردن پارامترها
+//     ========================================= */
+
+//     const typeTitles = {
+
+//         newest: "تازه",
+
+//         popular: "پربازدید",
+
+//         upcoming: "مناسبت‌های پیش‌رو",
+
+//         filtered: "نتایج فیلتر",
+
+//         saved: "ذخیره شده",
+
+//         history: "تاریخچه"
+
+//     };
+
+
+//     const formatTitles = {
+
+//         video: "ویدیو",
+
+//         audio: "صوت",
+
+//         playlist: "مجموعه",
+
+//         image: "عکس",
+
+//         text: "کتاب‌ها و مقاله"
+
+//     };
+        
+//     const topicNames = {
+
+//         quran:
+//             "قرآن",
+
+//         ahlulbayt:
+//             "چهارده معصوم",
+
+//         prophets:
+//             "پیامبران",
+
+//         hadith:
+//             "حدیث",
+
+//         history:
+//             "تاریخ",
+
+//         seerah:
+//             "سیره",
+
+//         arabic:
+//             "قواعد عربی",
+
+//         aqeedah:
+//             "کلام و عقاید",
+
+//         fiqh:
+//             "فقه و احکام",
+
+//         ethics:
+//             "اخلاق",
+
+//         family:
+//             "خانواده",
+
+//         "islamic-sciences":
+//             "علوم اسلامی"
+
+//     };
+
+
+//     const speakerNames = {
+
+//         speaker1:
+//             "سخنران 1",
+
+//         speaker2:
+//             "سخنران 2",
+
+//         speaker3:
+//             "سخنران 3"
+
+//     };
+
+// const isValidType =
+//     Object.prototype.hasOwnProperty.call(
+//         typeTitles,
+//         type
+//     );
+
+// const typeTitle =
+//     isValidType
+//         ? typeTitles[type]
+//         : "نتایج";
+// /* =========================================
+//    عنوان جستجو
+// ========================================= */
+
+// if (type === "search") {
+
+//     title.textContent =
+//         q
+//             ? `نتایج جستجوی "${q}"`
+//             : "نتایج";
+
+//     return;
+// }
+//     const topicTitle =
+//         topicNames[topic] || topic;
+
+//     const speakerTitle =
+//         speakerNames[speaker] || speaker;
+//     /* =========================================
+//        ساخت عنوان
+//     ========================================= */
+
+//     const parts = [];
+
+
+//     /* format */
+
+//     if (format && formatTitles[format]) {
+
+//         parts.push(
+//             formatTitles[format]
+//         );
+
+//     }
+
+
+//     /* type */
+
+//     if (typeTitle) {
+
+//         parts.push(
+//             typeTitle
+//         );
+
+//     }
+
+
+//     /* =========================================
+//        اگر format وجود نداشت
+//        بعد از type «ها» اضافه شود
+//     ========================================= */
+
+//     let result =
+//         parts.join("‌های ");
+
+
+// if (
+//     !format &&
+//     typeTitle &&
+//     isValidType &&
+//     !["filtered", "history"].includes(type)
+// ) {
+
+//     result += "‌ها";
+
+// }
+
+
+//     if (topic) {
+
+//         result +=
+//             " درباره‌ی " +
+//             topicTitle;
+
+//     }
+
+
+//     if (speaker) {
+
+//         result +=
+//             " از " +
+//             speakerTitle;
+
+//     }
+
+
+//         title.textContent =
+//             result;
+
+// }
 
 /* =========================================================
    SET RESULTS TITLE
@@ -50,6 +271,9 @@ function setResultsTitle(type) {
     const speaker =
         params.get("speaker");
 
+    const q =
+        params.get("q");
+
 
     /* =========================================
        فارسی کردن پارامترها
@@ -57,9 +281,9 @@ function setResultsTitle(type) {
 
     const typeTitles = {
 
-        newest: "تازه",
+        newest: "تازه‌ها",
 
-        popular: "پربازدید",
+        popular: "پربازدید‌ها",
 
         upcoming: "مناسبت‌های پیش‌رو",
 
@@ -85,7 +309,8 @@ function setResultsTitle(type) {
         text: "کتاب‌ها و مقاله"
 
     };
-        
+
+
     const topicNames = {
 
         quran:
@@ -140,41 +365,48 @@ function setResultsTitle(type) {
 
     };
 
-const isValidType =
-    Object.prototype.hasOwnProperty.call(
-        typeTitles,
-        type
-    );
 
-const typeTitle =
-    isValidType
-        ? typeTitles[type]
-        : "نتایج";
+    /* =========================================
+       عنوان جستجو
+    ========================================= */
+
+    if (type === "search") {
+
+        title.textContent =
+            q
+                ? `نتایج جستجوی "${q}"`
+                : "نتایج";
+
+        return;
+    }
+
+
+    /* =========================================
+       عنوان‌های فارسی
+    ========================================= */
+
+    const typeTitle =
+        typeTitles[type];
+
+    const formatTitle =
+        formatTitles[format];
 
     const topicTitle =
         topicNames[topic] || topic;
 
     const speakerTitle =
         speakerNames[speaker] || speaker;
+
+
     /* =========================================
        ساخت عنوان
+       
+       ترتیب:
+       type - format - topic - speaker
     ========================================= */
 
     const parts = [];
 
-
-    /* format */
-
-    if (format && formatTitles[format]) {
-
-        parts.push(
-            formatTitles[format]
-        );
-
-    }
-
-
-    /* type */
 
     if (typeTitle) {
 
@@ -185,51 +417,43 @@ const typeTitle =
     }
 
 
+    if (formatTitle) {
+
+        parts.push(
+            formatTitle
+        );
+
+    }
+
+
+    if (topicTitle) {
+
+        parts.push(
+            topicTitle
+        );
+
+    }
+
+
+    if (speakerTitle) {
+
+        parts.push(
+            speakerTitle
+        );
+
+    }
+
+
     /* =========================================
-       اگر format وجود نداشت
-       بعد از type «ها» اضافه شود
+       اگر هیچ کدام وجود نداشت
     ========================================= */
 
-    let result =
-        parts.join("‌های ");
-
-
-if (
-    !format &&
-    typeTitle &&
-    isValidType &&
-    !["filtered", "history"].includes(type)
-) {
-
-    result += "‌ها";
+    title.textContent =
+        parts.length
+            ? parts.join(" - ")
+            : "نتایج";
 
 }
-
-
-    if (topic) {
-
-        result +=
-            " درباره‌ی " +
-            topicTitle;
-
-    }
-
-
-    if (speaker) {
-
-        result +=
-            " از " +
-            speakerTitle;
-
-    }
-
-
-        title.textContent =
-            result;
-
-}
-
-
 
 /* =========================================================
    LOAD RESULTS
@@ -471,7 +695,8 @@ if (
 
 
         const format =
-            params.get("format");
+            params.get("format") ||
+            params.get("formatf");
 
 
         /* =========================================

@@ -144,19 +144,44 @@ document.addEventListener("componentsLoaded", () => {
 
 let label = value;
 
+/* =========================================
+   موضوع → مستقیماً از URL
+========================================= */
 
-/* موضوع و سخنران مستقیماً از URL خوانده می‌شوند */
-if (
-    key === "topic" ||
-    key === "speaker"
-) {
+if (key === "topic") {
 
     label = value;
 
 }
 
 
-/* قالب از option خوانده می‌شود */
+/* =========================================
+   سخنران → اول از option، در صورت نبود
+   از مقدار URL
+========================================= */
+
+else if (key === "speaker") {
+
+    const option =
+        select.querySelector(
+            `option[value="${value}"]`
+        );
+
+
+    if (option) {
+
+        label =
+            option.textContent.trim();
+
+    }
+
+}
+
+
+/* =========================================
+   قالب → از option
+========================================= */
+
 else {
 
     const option =
