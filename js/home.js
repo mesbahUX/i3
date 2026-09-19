@@ -96,54 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-/* =========================================================
-   TOUCH SWIPE
-========================================================= */
 
-let touchStartX = 0;
-let touchEndX = 0;
-
-const heroSlider = document.querySelector(".hero-slider");
-
-if (heroSlider) {
-
-    heroSlider.addEventListener("touchstart", (e) => {
-
-        touchStartX = e.changedTouches[0].screenX;
-
-    }, { passive: true });
-
-
-    heroSlider.addEventListener("touchend", (e) => {
-
-        touchEndX = e.changedTouches[0].screenX;
-
-        const swipeDistance =
-            touchEndX - touchStartX;
-
-
-        // Swipe به چپ → اسلاید بعدی
-        if (swipeDistance < -50) {
-
-            nextSlide();
-
-            startSlider();
-
-        }
-
-
-        // Swipe به راست → اسلاید قبلی
-        else if (swipeDistance > 50) {
-
-            prevSlide();
-
-            startSlider();
-
-        }
-
-    }, { passive: true });
-
-}
     showSlide(0);
 
     startSlider();

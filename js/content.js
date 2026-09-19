@@ -68,7 +68,6 @@ async function loadContent() {
 
 
         renderContent(content);
-        updateContentGroupLinks(content);
 
     }
 
@@ -104,8 +103,6 @@ function renderContent(content) {
     renderContentInfo(content);
 
     const type = getText(content, "type");
-
-    updateContentGroups(type);
 
     if (type === "video") {
         renderVideo(content);
@@ -226,18 +223,18 @@ function renderVideoAudio(content) {
 
     /* COVER */
 
-    // const cover = getText(
-    //     content,
-    //     "cover"
-    // );
+    const cover = getText(
+        content,
+        "cover"
+    );
 
-    // const coverElement = document.getElementById(
-    //     "video-audio-cover"
-    // );
+    const coverElement = document.getElementById(
+        "video-audio-cover"
+    );
 
-    // if (cover) {
-    //     coverElement.src = cover;
-    // }
+    if (cover) {
+        coverElement.src = cover;
+    }
 
 
     /* AUDIO */
@@ -310,21 +307,10 @@ function renderAudio(content) {
         "title"
     );
 
-renderSpeaker(
-    content,
-    "audio-speaker",
-    "audio-speaker-name",
-    "audio-speaker-initial"
-);
-/* TAGS */
 
-renderTags(
-    content,
-    "audio-tags"
-);
     /* SPEAKER + TAGS */
 
-    // renderAudioTags(content);
+    renderAudioTags(content);
 
 
     /* AUDIO */
@@ -385,17 +371,6 @@ function initAudioPlayer(
     const currentTime = document.getElementById(currentId);
     const duration = document.getElementById(durationId);
 
-    const prevButton = document.getElementById(
-        audioId === "content-audio"
-            ? "audio-prev"
-            : "video-audio-prev"
-    );
-
-    const nextButton = document.getElementById(
-        audioId === "content-audio"
-            ? "audio-next"
-            : "video-audio-next"
-    );
 
     if (
         !audio ||
@@ -437,26 +412,6 @@ function initAudioPlayer(
         }
     };
 
-    /* 10 SECONDS BACK / FORWARD */
-
-    if (prevButton) {
-        prevButton.onclick = () => {
-            audio.currentTime = Math.max(
-                0,
-                audio.currentTime - 10
-            );
-        };
-    }
-
-    if (nextButton) {
-        nextButton.onclick = () => {
-            audio.currentTime = Math.min(
-                audio.duration,
-                audio.currentTime + 10
-            );
-        };
-    }
-
 
     /* DURATION */
 
@@ -497,20 +452,17 @@ function initAudioPlayer(
 
     /* SEEK */
 
-    progress.addEventListener("input", () => {
+    progress.oninput = () => {
 
-        if (
-            !audio.duration ||
-            isNaN(audio.duration)
-        ) {
+        if (!audio.duration) {
             return;
         }
 
-        const value = Number(progress.value);
-
         audio.currentTime =
-            (value / 100) * audio.duration;
-    });
+            (
+                progress.value / 100
+            ) * audio.duration;
+    };
 
 
     /* END */
@@ -570,7 +522,7 @@ function renderTags(
         tag.className = "content-tag";
 
         tag.href =
-            "results.html?topic=" +
+            "results.html?type=" +
             encodeURIComponent(tagName);
 
         tag.textContent = tagName;
@@ -584,107 +536,98 @@ function renderTags(
    AUDIO TAGS
 ========================================================= */
 
-// function renderAudioTags(content) {
+function renderAudioTags(content) {
 
-//     const container = document.getElementById(
-//         "audio-tags"
-//     );
+    const container = document.getElementById(
+        "audio-tags"
+    );
 
-//     if (!container) {
-//         return;
-//     }
-
-
-//     container.innerHTML = "";
+    if (!container) {
+        return;
+    }
 
 
-//     /* SPEAKER */
-
-//     const speaker = getText(
-//         content,
-//         "speaker"
-//     );
-
-//     if (speaker) {
-
-//         const speakerTag =
-//             document.createElement("a");
-
-//         speakerTag.className =
-//             "content-tag";
-
-//         // speakerTag.href =
-//         //     "speakers.html?speaker=" +
-//         //     encodeURIComponent(speaker);
-
-//         speakerTag.textContent = speaker;
-
-//         container.appendChild(
-//             speakerTag
-//         );
-//     }
+    container.innerHTML = "";
 
 
-//     /* TAGS */
-
-//     renderTags(
-//         content,
-//         "audio-tags"
-//     );
-// }
-
-
-/* =========================================================
-   SPEAKER
-========================================================= */
-
-function renderSpeaker(
-    content,
-    speakerId = "video-speaker",
-    nameId = "video-speaker-name",
-    initialId = "speaker-initial"
-) {
+    /* SPEAKER */
 
     const speaker = getText(
         content,
         "speaker"
     );
 
-    const speakerElement =
-        document.getElementById(
-            speakerId
+    if (speaker) {
+
+        const speakerTag =
+            document.createElement("a");
+
+        speakerTag.className =
+            "content-tag";
+
+        speakerTag.href =
+            "speakers.html?speaker=" +
+            encodeURIComponent(speaker);
+
+        speakerTag.textContent = speaker;
+
+        container.appendChild(
+            speakerTag
         );
-
-
-    if (!speakerElement) {
-        return;
     }
+
+
+    /* TAGS */
+
+    renderTags(
+        content,
+        "audio-tags"
+    );
+}
+
+
+/* =========================================================
+   SPEAKER
+========================================================= */
+
+function renderSpeaker(content) {
+
+    const speaker = getText(
+        content,
+        "speaker"
+    );
+
+    const speakerLink =
+        document.getElementById(
+            "video-speaker"
+        );
 
 
     if (!speaker) {
 
-        speakerElement.style.display = "none";
+        speakerLink.style.display = "none";
 
         return;
     }
 
 
-    speakerElement.style.display = "";
+    speakerLink.style.display = "";
 
-
-    /* NAME */
 
     document.getElementById(
-        nameId
+        "video-speaker-name"
     ).textContent = speaker;
 
 
-    /* INITIAL */
-
     document.getElementById(
-        initialId
+        "speaker-initial"
     ).textContent =
         speaker.charAt(0);
+
+
+    speakerLink.href =
+        "speakers.html?speaker=" +
+        encodeURIComponent(speaker);
 }
 
 
@@ -841,177 +784,4 @@ function renderContentInfo(content) {
                 )
             );
         });
-}
-
-/* =========================================================
-   CONTENT GROUP
-========================================================= */
-
-function updateContentGroups(type) {
-
-    const contentGroups =
-        document.querySelectorAll(".content-group");
-
-    if (!contentGroups.length) {
-        return;
-    }
-
-
-    contentGroups.forEach(group => {
-
-        const rows =
-            group.querySelectorAll(
-                ":scope > .content-row"
-            );
-
-        if (!rows.length) {
-            return;
-        }
-
-
-        /* =================================================
-           VIDEO
-        ================================================= */
-
-        if (type === "video") {
-
-            /*
-             * دسکتاپ:
-             * ردیف اول مخفی شود چون همان محتوا
-             * در سایدبار نمایش داده می‌شود.
-             *
-             * موبایل:
-             * سایدبار وجود ندارد، پس ردیف اول نمایش داده شود.
-             */
-
-            if (window.innerWidth > 700) {
-
-                rows[0].style.display = "none";
-
-            } else {
-
-                rows[0].style.display = "";
-
-            }
-
-            return;
-        }
-
-
-        /* =================================================
-           AUDIO / OTHER
-        ================================================= */
-
-        rows[0].style.display = "";
-
-    });
-}
-
-/* =========================================================
-   UPDATE CONTENT GROUP LINKS
-========================================================= */
-
-function updateContentGroupLinks(content) {
-
-    const contentGroups =
-        document.querySelectorAll(".content-group");
-
-    if (!contentGroups.length) {
-        return;
-    }
-
-
-    contentGroups.forEach(group => {
-
-        const rows =
-            group.querySelectorAll(
-                ":scope > .content-row"
-            );
-
-
-        rows.forEach(row => {
-
-            const slider =
-                row.querySelector(
-                    ".content-slider"
-                );
-
-            const viewAll =
-                row.querySelector(
-                    ".view-all"
-                );
-
-
-            if (!slider || !viewAll) {
-                return;
-            }
-
-
-            /* =================================================
-               FORMAT
-            ================================================= */
-
-            const format =
-                slider.dataset.type;
-
-
-            if (!format) {
-                return;
-            }
-
-
-            /* =================================================
-               FILTER
-            ================================================= */
-
-            const filter =
-                slider.dataset.filter;
-
-
-            if (!filter) {
-                return;
-            }
-
-
-            /* =================================================
-               VALUE FROM CURRENT CONTENT
-            ================================================= */
-
-            const value =
-                getText(
-                    content,
-                    filter
-                );
-
-
-            if (!value) {
-                return;
-            }
-
-
-            /* =================================================
-               BUILD URL
-            ================================================= */
-
-            const params =
-                new URLSearchParams();
-
-            params.set(
-                "format",
-                format
-            );
-
-            params.set(
-                filter,
-                value
-            );
-
-
-            viewAll.href =
-                `results.html?${params.toString()}`;
-
-        });
-
-    });
-
 }
