@@ -850,3 +850,17 @@ function initSearch() {
     });
 
 }
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+// const footerScript =
+//     document.createElement("script");
+
+// footerScript.src =
+//     "js/footer.js";
+
+// document.body.appendChild(
+//     footerScript
+// );

@@ -145,15 +145,18 @@ document.addEventListener("componentsLoaded", () => {
 let label = value;
 
 
-/* موضوع مستقیماً از URL فارسی خوانده می‌شود */
-if (key === "topic") {
+/* موضوع و سخنران مستقیماً از URL خوانده می‌شوند */
+if (
+    key === "topic" ||
+    key === "speaker"
+) {
 
     label = value;
 
 }
 
 
-/* سخنران و قالب از option خوانده می‌شوند */
+/* قالب از option خوانده می‌شود */
 else {
 
     const option =

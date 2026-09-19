@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/video-side-row.css">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -40,77 +41,220 @@
                  class="content-main video-layout">
 
             <!-- VIDEO -->
+            <div class="video-section">
+                <div class="video-content-column">
 
-            <div class="video-box">
+                        <div class="video-box">
 
-                <video id="content-video"
-                       controls
-                       playsinline>
+                            <video id="content-video"
+                                controls
+                                playsinline>
 
-                    <source id="video-source"
-                            src=""
-                            type="video/mp4">
+                                <source id="video-source"
+                                        src=""
+                                        type="video/mp4">
 
-                    مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                                مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
 
-                </video>
+                            </video>
 
+                        </div>
+
+
+                        <!-- VIDEO INFORMATION -->
+
+                        <div class="video-information">
+
+                            <!-- TITLE -->
+
+
+                            <h1 id="video-title"></h1>
+
+                            <!-- ACTIONS -->
+
+                            <div class="content-actions video-actions">
+
+                                <button type="button"
+                                        class="content-action download-button">
+
+                                    <i class="fa-solid fa-download"></i>
+                                    <span>دانلود</span>
+
+                                </button>
+
+                                <button type="button"
+                                        class="content-action share-button">
+
+                                    <i class="fa-solid fa-share-nodes"></i>
+                                    <span>اشتراک گذاری</span>
+
+                                </button>
+
+                                <button type="button"
+                                        class="content-action save-action">
+
+                                    <i class="fa-regular fa-bookmark"></i>
+                                    <span>ذخیره</span>
+
+                                </button>
+
+                                <button type="button"
+                                        class="content-action copy-link-action">
+
+                                    <i class="fa-regular fa-copy"></i>
+                                    <span>کپی لینک</span>
+
+                                </button>
+
+                            </div>
+
+                            <div class="video-divider"></div>
+
+                            <!-- SPEAKER -->
+
+
+                            <span id="video-speaker"
+                            class="speaker-profile"
+                            href="#">
+
+                                <div id="speaker-avatar"
+                                    class="speaker-avatar">
+
+                                    <span id="speaker-initial"></span>
+
+                                </div>
+
+                                <span id="video-speaker-name"></span>
+
+                            </span>
+
+
+                            <!-- TRANSCRIPT -->
+
+                            <section id="video-transcript-section"
+                                    class="transcript-section">
+
+                                <div id="video-transcript"
+                                    class="transcript-text collapsed">
+                                </div>
+
+                                <button id="video-transcript-more"
+                                        class="transcript-more"
+                                        type="button">
+
+                                    بیشتر
+
+                                    <i class="fa-solid fa-chevron-down"></i>
+
+                                </button>
+
+                            </section>
+
+                            <!-- TAGS -->
+
+                            <div id="video-topic"
+                                class="content-tags">
+                            </div>
+                        </div>
+                </div>
+
+                <div class="video-side-row">
+                    <h2 data-content-info="topic">
+                        ویدیو‌های جدید درباره
+                    </h2>
+                </div>
             </div>
 
 
-            <!-- VIDEO INFORMATION -->
 
-            <div class="video-information">
+            <div class="content-divider"></div>
 
-                <h1 id="video-title"></h1>
+            <!-- =================================================
+                    AUDIO WITH VIDEO
+            ================================================== -->
 
+            <section id="video-audio-section"
+                    class="audio-layout">
 
-                <div id="video-topic"
-                     class="content-tags">
+                <!-- <div class="audio-cover-container">
+
+                    <img id="video-audio-cover"
+                        class="audio-cover"
+                        src=""
+                        alt="">
+
+                </div> -->
+
+                <div class="audio-information">
+
+                    <h2 id="video-audio-title"></h2>
                 </div>
 
 
-                <a id="video-speaker"
-                   class="speaker-profile"
-                   href="#">
+                <div class="audio-player">
 
-                    <div id="speaker-avatar"
-                         class="speaker-avatar">
+                    <audio id="video-audio">
 
-                        <span id="speaker-initial"></span>
+                        <source id="video-audio-source"
+                                src=""
+                                type="audio/mpeg">
+
+                    </audio>
+
+
+                    <div class="audio-progress">
+
+                        <span id="video-audio-current">
+                            00:00
+                        </span>
+
+                        <input id="video-audio-progress"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="0">
+
+                        <span id="video-audio-duration">
+                            00:00
+                        </span>
 
                     </div>
 
-                    <span id="video-speaker-name"></span>
 
-                </a>
+                    <div class="audio-controls">
 
+                        <button id="video-audio-prev"
+                                type="button"
+                                class="audio-control audio-skip">
 
-                <!-- TRANSCRIPT -->
+                            <i class="fa-solid fa-rotate-left"></i>
+                            <span>10</span>
 
-                <section id="video-transcript-section"
-                         class="transcript-section">
+                        </button>
 
-                    <div id="video-transcript"
-                         class="transcript-text collapsed">
+                        <button id="video-audio-play"
+                                type="button"
+                                class="audio-play">
+
+                            <i class="fa-solid fa-play"></i>
+
+                        </button>
+
+                        <button id="video-audio-next"
+                                type="button"
+                                class="audio-control audio-skip">
+
+                            <i class="fa-solid fa-rotate-right"></i>
+                            <span>10</span>
+
+                        </button>
+
                     </div>
 
-                    <button id="video-transcript-more"
-                            class="transcript-more"
-                            type="button">
-
-                        بیشتر
-
-                        <i class="fa-solid fa-chevron-down"></i>
-
-                    </button>
-
-                </section>
+                </div>
 
 
-                <!-- ACTIONS -->
-
-                <div class="content-actions video-actions">
+                <div class="content-actions audio-actions">
 
                     <button type="button"
                             class="content-action download-button">
@@ -128,151 +272,26 @@
 
                     </button>
 
-                    <button type="button"
+                    <!-- <button type="button"
                             class="content-action save-action">
 
                         <i class="fa-regular fa-bookmark"></i>
                         <span>ذخیره</span>
 
-                    </button>
+                    </button> -->
 
-                    <button type="button"
+                    <!-- <button type="button"
                             class="content-action copy-link-action">
 
                         <i class="fa-regular fa-copy"></i>
                         <span>کپی لینک</span>
 
-                    </button>
+                    </button> -->
 
                 </div>
-
-                <div class="content-divider"></div>
-
-                <!-- =================================================
-                     AUDIO WITH VIDEO
-                ================================================== -->
-
-                <section id="video-audio-section"
-                        class="audio-layout">
-
-                    <div class="audio-cover-container">
-
-                        <img id="video-audio-cover"
-                            class="audio-cover"
-                            src=""
-                            alt="">
-
-                    </div>
-                    <div class="audio-information">
-
-                        <h2 id="video-audio-title"></h2>
-                    </div>
-
-
-                    <div class="audio-player">
-
-                        <audio id="video-audio">
-
-                            <source id="video-audio-source"
-                                    src=""
-                                    type="audio/mpeg">
-
-                        </audio>
-
-
-                        <div class="audio-progress">
-
-                            <span id="video-audio-current">
-                                00:00
-                            </span>
-
-                            <input id="video-audio-progress"
-                                type="range"
-                                min="0"
-                                max="100"
-                                value="0">
-
-                            <span id="video-audio-duration">
-                                00:00
-                            </span>
-
-                        </div>
-
-
-                        <div class="audio-controls">
-
-                            <button id="video-audio-prev"
-                                    type="button"
-                                    class="audio-control">
-
-                                <i class="fa-solid fa-backward-step"></i>
-
-                            </button>
-
-
-                            <button id="video-audio-play"
-                                    type="button"
-                                    class="audio-play">
-
-                                <i class="fa-solid fa-play"></i>
-
-                            </button>
-
-
-                            <button id="video-audio-next"
-                                    type="button"
-                                    class="audio-control">
-
-                                <i class="fa-solid fa-forward-step"></i>
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="content-actions audio-actions">
-
-                        <button type="button"
-                                class="content-action download-button">
-
-                            <i class="fa-solid fa-download"></i>
-                            <span>دانلود</span>
-
-                        </button>
-
-                        <button type="button"
-                                class="content-action share-button">
-
-                            <i class="fa-solid fa-share-nodes"></i>
-                            <span>اشتراک گذاری</span>
-
-                        </button>
-
-                        <!-- <button type="button"
-                                class="content-action save-action">
-
-                            <i class="fa-regular fa-bookmark"></i>
-                            <span>ذخیره</span>
-
-                        </button> -->
-
-                        <!-- <button type="button"
-                                class="content-action copy-link-action">
-
-                            <i class="fa-regular fa-copy"></i>
-                            <span>کپی لینک</span>
-
-                        </button> -->
-
-                    </div>
-                    
-                    <div class="content-divider"></div> 
-                </section>
-
-
-            </div>
+                
+                <div class="content-divider"></div> 
+            </section>
 
         </section>
 
@@ -296,14 +315,10 @@
 
             <div class="audio-information">
 
+                <!-- TITLE -->
                 <h1 id="audio-title"></h1>
 
-
-                <div id="audio-tags"
-                     class="content-tags audio-tags">
-                </div>
-
-
+                <!-- PLAYER -->
                 <div class="audio-player">
 
                     <audio id="content-audio">
@@ -340,9 +355,10 @@
 
                         <button id="audio-prev"
                                 type="button"
-                                class="audio-control">
+                                class="audio-control audio-skip">
 
-                            <i class="fa-solid fa-backward-step"></i>
+                            <i class="fa-solid fa-rotate-left"></i>
+                            <span>10</span>
 
                         </button>
 
@@ -358,9 +374,10 @@
 
                         <button id="audio-next"
                                 type="button"
-                                class="audio-control">
+                                class="audio-control audio-skip">
 
-                            <i class="fa-solid fa-forward-step"></i>
+                            <i class="fa-solid fa-rotate-right"></i>
+                            <span>10</span>
 
                         </button>
 
@@ -368,32 +385,7 @@
 
                 </div>
 
-
-                <!-- TRANSCRIPT -->
-
-                <section id="audio-transcript-section"
-                         class="transcript-section">
-
-                    <div id="audio-transcript"
-                         class="transcript-text collapsed">
-                    </div>
-
-
-                    <button id="audio-transcript-more"
-                            class="transcript-more"
-                            type="button">
-
-                        بیشتر
-
-                        <i class="fa-solid fa-chevron-down"></i>
-
-                    </button>
-
-                </section>
-
-
                 <!-- ACTIONS -->
-
                 <div class="content-actions audio-actions">
 
                     <button type="button"
@@ -430,6 +422,45 @@
 
                 </div>
 
+                <!-- SPEAKER -->
+                <span id="audio-speaker"
+                class="speaker-profile">
+
+                    <div id="speaker-avatar"
+                        class="speaker-avatar">
+
+                        <span id="audio-speaker-initial"></span>
+                    </div>
+
+                    <span id="audio-speaker-name"></span>
+
+                </span>
+
+                <!-- TRANSCRIPT -->
+                <section id="audio-transcript-section"
+                         class="transcript-section">
+
+                    <div id="audio-transcript"
+                         class="transcript-text collapsed">
+                    </div>
+
+
+                    <button id="audio-transcript-more"
+                            class="transcript-more"
+                            type="button">
+
+                        بیشتر
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+                </section>
+
+                <!-- TAGS -->
+                <div id="audio-tags"
+                     class="content-tags audio-tags">
+                </div>
             </div>
 
             <div class="content-divider"></div>
@@ -447,7 +478,7 @@
                     </h2>
 
                     <a
-                        href="results.html?type=newest-video"
+                        href="#"
                         class="view-all"
                     >
                         مشاهده همه
@@ -463,6 +494,7 @@
                     data-xml="data/contents2.xml"
                     data-type="video"
                     data-ids="1-8"
+                    data-filter="topic"
                 ></div>
 
             </section>
@@ -477,7 +509,7 @@
                     </h2>
 
                     <a
-                        href="results.html?type=newest-audio"
+                        href="#"
                         class="view-all"
                     >
                         مشاهده همه
@@ -493,6 +525,7 @@
                     data-xml="data/contents2.xml"
                     data-type="audio"
                     data-ids="15-30"
+                    data-filter="topic"
                 ></div>
 
             </section>
@@ -507,7 +540,7 @@
                     </h2>
 
                     <a
-                        href="playlists.html"
+                        href="#"
                         class="view-all"
                     >
                         مشاهده همه
@@ -522,6 +555,7 @@
                     class="content-slider"
                     data-xml="data/playlists.xml"
                     data-type="playlist"
+                    data-filter="topic"
                 ></div>
 
             </section>
@@ -536,7 +570,7 @@
                     </h2>
 
                     <a
-                        href="results.html?type=newest-video"
+                        href="#"
                         class="view-all"
                     >
                         مشاهده همه
@@ -552,6 +586,7 @@
                     data-xml="data/contents2.xml"
                     data-type="video"
                     data-ids="9-15"
+                    data-filter="speaker"
                 ></div>
 
             </section>
@@ -566,7 +601,7 @@
                     </h2>
 
                     <a
-                        href="results.html?type=newest-audio"
+                        href="#"
                         class="view-all"
                     >
                         مشاهده همه
@@ -582,6 +617,7 @@
                     data-xml="data/contents2.xml"
                     data-type="audio"
                     data-ids="30-39"
+                    data-filter="speaker"
                 ></div>
 
             </section>
@@ -601,6 +637,7 @@
     <script src="js/content-actions.js"></script>
     <script src="js/cards.js"></script>
     <script src="js/rows.js"></script>
+    <script src="js/video-side-row.js"></script>
 
 </body>
 
