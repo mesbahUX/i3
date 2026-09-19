@@ -140,8 +140,16 @@ function setResultsTitle(type) {
 
     };
 
-    const typeTitle =
-        typeTitles[type] || "نتایج";
+const isValidType =
+    Object.prototype.hasOwnProperty.call(
+        typeTitles,
+        type
+    );
+
+const typeTitle =
+    isValidType
+        ? typeTitles[type]
+        : "نتایج";
 
     const topicTitle =
         topicNames[topic] || topic;
@@ -186,15 +194,16 @@ function setResultsTitle(type) {
         parts.join("‌های ");
 
 
-    if (
-        !format &&
-        typeTitle &&
-        !["filtered", "history"].includes(type)
-    ) {
+if (
+    !format &&
+    typeTitle &&
+    isValidType &&
+    !["filtered", "history"].includes(type)
+) {
 
-        result += "‌ها";
+    result += "‌ها";
 
-    }
+}
 
 
     if (topic) {

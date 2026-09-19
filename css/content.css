@@ -180,7 +180,13 @@
     font-weight: 600;
 }
 
-
+.audio-information .speaker-profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: auto;
+    margin-right: 0;
+}
 /* =========================================================
    TRANSCRIPT
 ========================================================= */
@@ -228,7 +234,6 @@
     font-size: .65rem;
     transition: transform .2s ease;
 }
-
 
 
 /* =========================================================
@@ -287,9 +292,16 @@
     font-size: var(--fs-xlg);
 }
 .audio-tags {
-    justify-content: center;
+    justify-content: flex-start;
+}
+/* ترنسکریپت سمت راست */
+.audio-information .transcript-section {
+    text-align: right;
 }
 
+.audio-information .transcript-text {
+    text-align: right;
+}
 /* =========================================================
    AUDIO PLAYER
 ========================================================= */

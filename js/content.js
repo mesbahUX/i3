@@ -68,6 +68,7 @@ async function loadContent() {
 
 
         renderContent(content);
+        updateContentGroupLinks(content);
 
     }
 
@@ -309,10 +310,21 @@ function renderAudio(content) {
         "title"
     );
 
+renderSpeaker(
+    content,
+    "audio-speaker",
+    "audio-speaker-name",
+    "audio-speaker-initial"
+);
+/* TAGS */
 
+renderTags(
+    content,
+    "audio-tags"
+);
     /* SPEAKER + TAGS */
 
-    renderAudioTags(content);
+    // renderAudioTags(content);
 
 
     /* AUDIO */
@@ -558,7 +570,7 @@ function renderTags(
         tag.className = "content-tag";
 
         tag.href =
-            "results.html?type=" +
+            "results.html?topic=" +
             encodeURIComponent(tagName);
 
         tag.textContent = tagName;
@@ -572,98 +584,107 @@ function renderTags(
    AUDIO TAGS
 ========================================================= */
 
-function renderAudioTags(content) {
+// function renderAudioTags(content) {
 
-    const container = document.getElementById(
-        "audio-tags"
-    );
+//     const container = document.getElementById(
+//         "audio-tags"
+//     );
 
-    if (!container) {
-        return;
-    }
-
-
-    container.innerHTML = "";
+//     if (!container) {
+//         return;
+//     }
 
 
-    /* SPEAKER */
-
-    const speaker = getText(
-        content,
-        "speaker"
-    );
-
-    if (speaker) {
-
-        const speakerTag =
-            document.createElement("a");
-
-        speakerTag.className =
-            "content-tag";
-
-        speakerTag.href =
-            "speakers.html?speaker=" +
-            encodeURIComponent(speaker);
-
-        speakerTag.textContent = speaker;
-
-        container.appendChild(
-            speakerTag
-        );
-    }
+//     container.innerHTML = "";
 
 
-    /* TAGS */
+//     /* SPEAKER */
 
-    renderTags(
-        content,
-        "audio-tags"
-    );
-}
+//     const speaker = getText(
+//         content,
+//         "speaker"
+//     );
+
+//     if (speaker) {
+
+//         const speakerTag =
+//             document.createElement("a");
+
+//         speakerTag.className =
+//             "content-tag";
+
+//         // speakerTag.href =
+//         //     "speakers.html?speaker=" +
+//         //     encodeURIComponent(speaker);
+
+//         speakerTag.textContent = speaker;
+
+//         container.appendChild(
+//             speakerTag
+//         );
+//     }
+
+
+//     /* TAGS */
+
+//     renderTags(
+//         content,
+//         "audio-tags"
+//     );
+// }
 
 
 /* =========================================================
    SPEAKER
 ========================================================= */
 
-function renderSpeaker(content) {
+function renderSpeaker(
+    content,
+    speakerId = "video-speaker",
+    nameId = "video-speaker-name",
+    initialId = "speaker-initial"
+) {
 
     const speaker = getText(
         content,
         "speaker"
     );
 
-    const speakerLink =
+    const speakerElement =
         document.getElementById(
-            "video-speaker"
+            speakerId
         );
+
+
+    if (!speakerElement) {
+        return;
+    }
 
 
     if (!speaker) {
 
-        speakerLink.style.display = "none";
+        speakerElement.style.display = "none";
 
         return;
     }
 
 
-    speakerLink.style.display = "";
+    speakerElement.style.display = "";
 
+
+    /* NAME */
 
     document.getElementById(
-        "video-speaker-name"
+        nameId
     ).textContent = speaker;
 
 
+    /* INITIAL */
+
     document.getElementById(
-        "speaker-initial"
+        initialId
     ).textContent =
         speaker.charAt(0);
-
-
-    speakerLink.href =
-        "speakers.html?speaker=" +
-        encodeURIComponent(speaker);
 }
 
 
@@ -835,32 +856,162 @@ function updateContentGroups(type) {
         return;
     }
 
+
     contentGroups.forEach(group => {
 
         const rows =
-            group.querySelectorAll(":scope > .content-row");
+            group.querySelectorAll(
+                ":scope > .content-row"
+            );
 
         if (!rows.length) {
             return;
         }
 
-        /* اگر محتوا VIDEO است
-           ردیف اول VIDEO مخفی شود */
+
+        /* =================================================
+           VIDEO
+        ================================================= */
 
         if (type === "video") {
 
-            rows[0].style.display = "none";
+            /*
+             * دسکتاپ:
+             * ردیف اول مخفی شود چون همان محتوا
+             * در سایدبار نمایش داده می‌شود.
+             *
+             * موبایل:
+             * سایدبار وجود ندارد، پس ردیف اول نمایش داده شود.
+             */
 
+            if (window.innerWidth > 700) {
+
+                rows[0].style.display = "none";
+
+            } else {
+
+                rows[0].style.display = "";
+
+            }
+
+            return;
         }
 
-        /* اگر محتوا AUDIO است
-           ردیف اول نمایش داده شود */
 
-        else {
+        /* =================================================
+           AUDIO / OTHER
+        ================================================= */
 
-            rows[0].style.display = "";
-
-        }
+        rows[0].style.display = "";
 
     });
+}
+
+/* =========================================================
+   UPDATE CONTENT GROUP LINKS
+========================================================= */
+
+function updateContentGroupLinks(content) {
+
+    const contentGroups =
+        document.querySelectorAll(".content-group");
+
+    if (!contentGroups.length) {
+        return;
+    }
+
+
+    contentGroups.forEach(group => {
+
+        const rows =
+            group.querySelectorAll(
+                ":scope > .content-row"
+            );
+
+
+        rows.forEach(row => {
+
+            const slider =
+                row.querySelector(
+                    ".content-slider"
+                );
+
+            const viewAll =
+                row.querySelector(
+                    ".view-all"
+                );
+
+
+            if (!slider || !viewAll) {
+                return;
+            }
+
+
+            /* =================================================
+               FORMAT
+            ================================================= */
+
+            const format =
+                slider.dataset.type;
+
+
+            if (!format) {
+                return;
+            }
+
+
+            /* =================================================
+               FILTER
+            ================================================= */
+
+            const filter =
+                slider.dataset.filter;
+
+
+            if (!filter) {
+                return;
+            }
+
+
+            /* =================================================
+               VALUE FROM CURRENT CONTENT
+            ================================================= */
+
+            const value =
+                getText(
+                    content,
+                    filter
+                );
+
+
+            if (!value) {
+                return;
+            }
+
+
+            /* =================================================
+               BUILD URL
+            ================================================= */
+
+            const params =
+                new URLSearchParams();
+
+            params.set(
+                "format",
+                format
+            );
+
+            params.set(
+                filter,
+                value
+            );
+
+
+            viewAll.href =
+                `results.html?${params.toString()}`;
+
+        });
+
+    });
+
 }

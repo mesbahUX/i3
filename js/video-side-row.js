@@ -12,6 +12,27 @@ async function loadVideoSideRow() {
         const parser = new DOMParser();
         const xml = parser.parseFromString(xmlText, "text/xml");
 
+const currentContentId =
+    new URLSearchParams(
+        window.location.search
+    ).get("id");
+
+
+const currentContent =
+    [...xml.querySelectorAll("content")]
+        .find(content =>
+            content.getAttribute("id") ===
+            currentContentId
+        );
+
+
+const topic =
+    currentContent
+        ?.querySelector("topic")
+        ?.textContent
+        .trim() || "";
+
+
         const contents = [...xml.querySelectorAll("content")]
             .filter(content => {
 
@@ -100,8 +121,25 @@ async function loadVideoSideRow() {
             const moreButton = document.createElement("a");
 
             moreButton.className = "video-side-more";
-            moreButton.href = "results.html?type=newest";
+const params =
+    new URLSearchParams();
 
+params.set(
+    "format",
+    "video"
+);
+
+if (topic) {
+
+    params.set(
+        "topic",
+        topic
+    );
+}
+
+moreButton.href =
+    `results.html?${params.toString()}`;
+    
             moreButton.innerHTML = `
                 مشاهده همه
                 <i class="fa-solid fa-arrow-left"></i>

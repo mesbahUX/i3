@@ -54,6 +54,16 @@
     color: var(--surface);
 }
 
+.footer-column p{
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.footer-column p:hover {
+    color: var(--surface);
+    transform: translateX(4px);
+}
 
 /* =========================================================
    ABOUT
