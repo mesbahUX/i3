@@ -23,8 +23,8 @@
     grid-template-columns:
         1.5fr
         1fr
-        1.3fr
-        1fr
+        /* 1.3fr
+        1fr */
         1.3fr;
 
     gap: 40px;
@@ -329,12 +329,12 @@
         grid-column:span 2;
     }
 
-    .footer-contact {
+    /* .footer-contact {
         grid-column: span 2;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 12px 20px;
-    }
+    } */
     .footer-contact h3 {
         grid-column: span 2;
     }
