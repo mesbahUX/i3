@@ -1195,3 +1195,208 @@ function renderSectionItems(
         });
 
 }
+
+/* =========================================================
+   SAVED PAGE
+   حذف فوری محتوا و مجموعه بعد از برداشتن ذخیره
+========================================================= */
+
+document.addEventListener(
+    "click",
+    event => {
+
+        /* فقط صفحه ذخیره‌ها */
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+        if (
+            params.get("type") !== "saved"
+        ) {
+            return;
+        }
+
+
+        /* =====================================================
+           دکمه ذخیره محتوا یا مجموعه
+        ===================================================== */
+
+        const saveButton =
+            event.target.closest(
+                ".save-action, .playlist-card-save-button"
+            );
+
+
+        if (!saveButton) {
+            return;
+        }
+
+
+        /* =====================================================
+           کارت
+        ===================================================== */
+
+        const card =
+            saveButton.closest(
+                ".content-card, .playlist-card"
+            );
+
+
+        if (!card) {
+            return;
+        }
+
+
+        /* =====================================================
+           ID
+        ===================================================== */
+
+        const contentId =
+            saveButton.dataset.contentId;
+
+        const playlistId =
+            saveButton.dataset.playlistId;
+
+
+        /* =====================================================
+           بعد از اجرای save
+        ===================================================== */
+
+        setTimeout(() => {
+
+
+            /* =================================================
+               CONTENT
+            ================================================= */
+
+            if (contentId) {
+
+                let savedContents = [];
+
+                try {
+
+                    savedContents =
+                        JSON.parse(
+                            localStorage.getItem(
+                                "mesbah_saved_contents"
+                            ) || "[]"
+                        )
+                        .map(id => String(id));
+
+                } catch {
+
+                    savedContents = [];
+
+                }
+
+
+                /* اگر دیگر ذخیره نیست */
+                if (
+                    !savedContents.includes(
+                        String(contentId)
+                    )
+                ) {
+
+                    removeSavedCard(card);
+
+                }
+
+            }
+
+
+            /* =================================================
+               PLAYLIST
+            ================================================= */
+
+            if (playlistId) {
+
+                let savedPlaylists = [];
+
+                try {
+
+                    savedPlaylists =
+                        JSON.parse(
+                            localStorage.getItem(
+                                "mesbah_saved_playlists"
+                            ) || "[]"
+                        )
+                        .map(id => String(id));
+
+                } catch {
+
+                    savedPlaylists = [];
+
+                }
+
+
+                /* اگر دیگر ذخیره نیست */
+                if (
+                    !savedPlaylists.includes(
+                        String(playlistId)
+                    )
+                ) {
+
+                    removeSavedCard(card);
+
+                }
+
+            }
+
+        }, 0);
+
+    },
+    true
+);
+
+
+/* =========================================================
+   REMOVE SAVED CARD
+========================================================= */
+
+function removeSavedCard(card) {
+
+    if (!card) {
+        return;
+    }
+
+
+    card.remove();
+
+
+    /* =====================================================
+       اگر هیچ کارتی باقی نمانده
+    ===================================================== */
+
+    const container =
+        document.querySelector(
+            ".results-grid"
+        );
+
+
+    if (!container) {
+        return;
+    }
+
+
+    const remainingCards =
+        container.querySelectorAll(
+            ".content-card, .playlist-card"
+        );
+
+
+    if (!remainingCards.length) {
+
+        container.innerHTML = `
+
+            <div class="results-empty">
+
+                محتوایی برای نمایش پیدا نشد.
+
+            </div>
+
+        `;
+
+    }
+
+}

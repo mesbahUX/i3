@@ -254,9 +254,10 @@
 
 .content-card {
     flex: 0 0 250px;
+    position: relative;
 
     padding: 5px 5px;
-    overflow: hidden;
+    overflow: visible;
 
     background: transparent;
 
@@ -505,6 +506,8 @@
     text-decoration: none;
     color: var(--text);
     min-width: 0;
+    position: relative;
+    overflow: visible;
 
     container-type: inline-size;
 }
@@ -1147,5 +1150,193 @@
         flex: 0 0 110px;
     }
 
+}
+/* #endregion */
+
+/* #region CARD ACTIONS */
+
+.card-title-row {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+
+    width: 100%;
+}
+
+
+/* عنوان */
+
+.card-title-row h3 {
+    flex: 1;
+    min-width: 0;
+
+    margin: 0;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CARD ACTIONS
+========================================================= */
+
+.card-title-row .card-actions {
+    position: relative;
+
+    flex: 0 0 28px;
+
+    width: 28px;
+    height: 28px;
+
+    margin-right: 6px;
+
+    z-index: 20;
+}
+
+
+/* سه نقطه */
+
+.card-title-row .card-actions-button {
+    width: 28px;
+    height: 28px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    color: var(--text);
+}
+
+/* منوی گزینه‌ها */
+
+.card-actions-menu {
+    position: absolute;
+
+    bottom: 32px;
+    left: 0;
+
+    min-width: 80px;
+
+    padding: 6px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
+
+    display: none;
+}
+
+
+/* فقط با کلیک باز شود */
+
+.card-actions.show .card-actions-menu {
+    display: block;
+}
+
+
+/* گزینه‌ها */
+
+.card-actions-menu button {
+    width: 100%;
+
+    border: none;
+    background: transparent;
+
+    padding: 9px 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: var(--fs-sm);
+
+    cursor: pointer;
+
+    border-radius: 6px;
+
+    text-align: right;
+}
+
+
+.card-actions-menu button:hover {
+    background: var(--primary-soft);
+}
+
+
+.card-actions-menu i {
+    width: 18px;
+    text-align: center;
+    color: var(--primary-dark);
+}
+/* =========================================================
+   CARD ACTIONS - MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .card-title-row .card-actions {
+        flex: 0 0 22px;
+        width: 22px;
+        height: 22px;
+        margin-right: 3px;
+    }
+
+
+    /* سه نقطه */
+    .card-title-row .card-actions-button {
+        width: 22px;
+        height: 22px;
+
+        font-size: 13px;
+    }
+
+
+    /* منوی گزینه‌ها */
+    .card-actions-menu {
+        bottom: 25px;
+        left: 0;
+
+        min-width: 72px;
+
+        padding: 4px;
+
+        border-radius: 8px;
+    }
+
+
+    /* گزینه‌ها */
+    .card-actions-menu button {
+        padding: 7px 8px;
+
+        gap: 6px;
+
+        font-size: 0.75rem;
+
+        border-radius: 5px;
+    }
+
+
+    .card-actions-menu i {
+        width: 15px;
+        font-size: 12px;
+    }
 }
 /* #endregion */

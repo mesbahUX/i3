@@ -111,7 +111,7 @@ function createVideoCard(item) {
         </div>
 
 
-        <div class="content-card-body">
+        <!-- <div class="content-card-body">
 
             <h3>
                 ${title}
@@ -121,10 +121,31 @@ function createVideoCard(item) {
                 ${speaker}
             </p>
 
-        </div>
+        </div> -->
+        
+<div class="content-card-body">
 
+    <div class="card-title-row">
+
+        <h3>
+            ${title}
+        </h3>
+
+    </div>
+
+    <p>
+        ${speaker}
+    </p>
+
+</div>
     `;
 
+const titleRow =
+    card.querySelector(".card-title-row");
+
+titleRow.appendChild(
+    createCardActions(id, "content")
+);
 
     return card;
 
@@ -173,7 +194,7 @@ function createAudioCard(item) {
         </div>
 
 
-        <div class="content-card-body">
+        <!-- <div class="content-card-body">
 
             <h3>
                 ${title}
@@ -183,10 +204,30 @@ function createAudioCard(item) {
                 ${speaker}
             </p>
 
-        </div>
+        </div> -->
+<div class="content-card-body">
 
+    <div class="card-title-row">
+
+        <h3>
+            ${title}
+        </h3>
+
+    </div>
+
+    <p>
+        ${speaker}
+    </p>
+
+</div>
     `;
 
+const titleRow =
+    card.querySelector(".card-title-row");
+
+titleRow.appendChild(
+    createCardActions(id, "content")
+);
 
     return card;
 
@@ -332,9 +373,16 @@ function createPlaylistCard(item) {
         </div>
 
 
-        <h3>
+        <!-- <h3>
             ${title}
-        </h3>
+        </h3> -->
+<div class="card-title-row">
+
+    <h3>
+        ${title}
+    </h3>
+
+</div>
 
     `;
 
@@ -344,7 +392,11 @@ function createPlaylistCard(item) {
     ========================================================= */
 
     card.addEventListener("click", (event) => {
-
+        if (
+            event.target.closest(".card-actions")
+        ) {
+            return;
+        }
         /* فقط موبایل و تبلت */
         if (window.innerWidth > 1000) {
             return;
@@ -380,7 +432,12 @@ function createPlaylistCard(item) {
 
     });
 
+const titleRow =
+    card.querySelector(".card-title-row");
 
+titleRow.appendChild(
+    createCardActions(id, "playlist")
+);
     return card;
 
 }
@@ -481,3 +538,442 @@ function createTopicCard(item) {
 
 }
 
+/* =========================================================
+   CARD ACTIONS
+   منوی سه نقطه کارت
+========================================================= */
+
+function createCardActions(id, type = "content") {
+
+    const wrapper =
+        document.createElement("div");
+
+    wrapper.className =
+        "card-actions";
+
+
+wrapper.innerHTML = `
+
+    <button
+        class="card-actions-button"
+        type="button"
+        aria-label="گزینه‌ها"
+    >
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+    </button>
+
+    <div class="card-actions-menu">
+            ${
+                type === "playlist"
+                    ? `
+                        <button
+                            class="playlist-card-share-button"
+                            data-playlist-id="${id}"
+                            type="button"
+                        >
+                            <i class="fa-solid fa-share-nodes"></i>
+                            <span>اشتراک‌گذاری</span>
+                        </button>
+
+
+                        <button
+                            class="playlist-card-save-button"
+                            data-playlist-id="${id}"
+                            type="button"
+                        >
+                            <i class="fa-regular fa-bookmark"></i>
+                            <span>ذخیره</span>
+                        </button>
+                    `
+                    : `
+                        <button
+                            class="content-actions-button share-button"
+                            data-content-id="${id}"
+                            type="button"
+                        >
+                            <i class="fa-solid fa-share-nodes"></i>
+                            <span>اشتراک‌گذاری</span>
+                        </button>
+
+
+                        <button
+                            class="content-actions-button save-action"
+                            data-content-id="${id}"
+                            type="button"
+                        >
+                            <i class="fa-regular fa-bookmark"></i>
+                            <span>ذخیره</span>
+                        </button>
+
+
+                        <button
+                            class="content-actions-button download-button"
+                            data-content-id="${id}"
+                            type="button"
+                        >
+                            <i class="fa-solid fa-download"></i>
+                            <span>دانلود</span>
+                        </button>
+                    `
+            }
+
+        </div>
+
+    `;
+
+
+    /* =========================================================
+       THREE DOT BUTTON
+    ========================================================= */
+
+    const button =
+        wrapper.querySelector(
+            ".card-actions-button"
+        );
+
+
+    button.addEventListener(
+        "click",
+        event => {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+
+            document
+                .querySelectorAll(
+                    ".card-actions.show"
+                )
+                .forEach(other => {
+
+                    if (other !== wrapper) {
+
+                        other.classList.remove(
+                            "show"
+                        );
+
+                    }
+
+                });
+
+
+            wrapper.classList.toggle(
+                "show"
+            );
+const saveButton =
+    wrapper.querySelector(
+        ".save-action, .playlist-card-save-button"
+    );
+
+if (saveButton) {
+
+    const storageKey =
+        type === "playlist"
+            ? "mesbah_saved_playlists"
+            : "mesbah_saved_contents";
+
+
+    const savedItems =
+        JSON.parse(
+            localStorage.getItem(storageKey) || "[]"
+        );
+
+
+    const saved =
+        savedItems.includes(id);
+
+
+    const icon =
+        saveButton.querySelector("i");
+
+
+    if (saved) {
+
+        icon.classList.remove(
+            "fa-regular"
+        );
+
+        icon.classList.add(
+            "fa-solid"
+        );
+
+    } else {
+
+        icon.classList.remove(
+            "fa-solid"
+        );
+
+        icon.classList.add(
+            "fa-regular"
+        );
+
+    }
+
+}
+        }
+    );
+
+    /* =========================================================
+       PREVENT CARD LINK
+       جلوگیری از رفتن به صفحه کارت هنگام کلیک روی اکشن‌ها
+    ========================================================= */
+
+    wrapper
+        .querySelectorAll(
+            ".card-actions-menu button"
+        )
+        .forEach(actionButton => {
+
+            actionButton.addEventListener(
+                "click",
+                event => {
+
+                    event.preventDefault();
+
+                }
+            );
+
+        });
+return wrapper;
+}
+
+
+/* =========================================================
+   CLOSE CARD MENUS
+========================================================= */
+
+document.addEventListener(
+    "click",
+    event => {
+
+        if (
+            !event.target.closest(
+                ".card-actions"
+            )
+        ) {
+
+            document
+                .querySelectorAll(
+                    ".card-actions.show"
+                )
+                .forEach(action => {
+
+                    action.classList.remove(
+                        "show"
+                    );
+
+                });
+
+        }
+
+    }
+);
+
+/* =========================================================
+   PLAYLIST CARD ACTIONS
+========================================================= */
+
+document.addEventListener(
+    "click",
+    event => {
+
+        /* =====================================================
+           SHARE
+        ===================================================== */
+
+        const shareButton =
+            event.target.closest(
+                ".playlist-card-share-button"
+            );
+
+
+        if (shareButton) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+
+            const playlistId =
+                shareButton.dataset.playlistId;
+
+
+            if (!playlistId) return;
+
+
+            const card =
+                shareButton.closest(
+                    ".playlist-card"
+                );
+
+
+            const title =
+                card
+                    ?.querySelector(
+                        ".card-title-row h3"
+                    )
+                    ?.textContent
+                    .trim()
+                || "مجموعه";
+
+
+            const url =
+                `${window.location.origin}` +
+                `${window.location.pathname
+                    .replace(
+                        /[^/]+$/,
+                        "playlist.html"
+                    )}` +
+                `?id=${encodeURIComponent(playlistId)}`;
+
+
+            if (navigator.share) {
+
+                navigator.share({
+
+                    title: title,
+
+                    text:
+                        `${title}\n\nاز سامانه مصباح\n${url}`,
+
+                    url: url
+
+                }).catch(error => {
+
+                    if (
+                        error.name !==
+                        "AbortError"
+                    ) {
+
+                        console.error(
+                            "PLAYLIST CARD SHARE ERROR:",
+                            error
+                        );
+
+                    }
+
+                });
+
+            } else {
+
+                navigator.clipboard
+                    .writeText(url)
+                    .then(() => {
+
+                        alert(
+                            "لینک مجموعه کپی شد."
+                        );
+
+                    });
+
+            }
+
+
+            return;
+
+        }
+
+
+        /* =====================================================
+           SAVE
+        ===================================================== */
+
+        const saveButton =
+            event.target.closest(
+                ".playlist-card-save-button"
+            );
+
+
+        if (saveButton) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+
+            const playlistId =
+                saveButton.dataset.playlistId;
+
+
+            if (!playlistId) return;
+
+
+            let saved = [];
+
+            try {
+
+                saved =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "mesbah_saved_playlists"
+                        )
+                    ) || [];
+
+            } catch {
+
+                saved = [];
+
+            }
+
+
+            const id =
+                String(playlistId);
+
+
+            const icon =
+                saveButton.querySelector("i");
+
+
+            if (
+                saved.includes(id)
+            ) {
+
+                saved =
+                    saved.filter(
+                        item =>
+                            String(item) !== id
+                    );
+
+
+                saveButton.classList.remove(
+                    "saved"
+                );
+
+
+                if (icon) {
+
+                    icon.className =
+                        "fa-regular fa-bookmark";
+
+                }
+
+            } else {
+
+                saved.push(id);
+
+
+                saveButton.classList.add(
+                    "saved"
+                );
+
+
+                if (icon) {
+
+                    icon.className =
+                        "fa-solid fa-bookmark";
+
+                }
+
+            }
+
+
+            localStorage.setItem(
+                "mesbah_saved_playlists",
+                JSON.stringify(saved)
+            );
+
+
+            return;
+
+        }
+
+    }
+);
