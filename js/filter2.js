@@ -188,7 +188,62 @@ document.addEventListener("componentsLoaded", () => {
    وضعیت نمایش فیلدها
 ========================================= */
 
+// function updateFilterFieldsVisibility() {
+
+//     Object.keys(filterData).forEach(key => {
+
+//         const select =
+//             filterData[key].element;
+
+//         const field =
+//             select.closest(".filter-field");
+
+
+//         /*
+//          * اگر فیلتر ثابت URL وجود داشته باشد
+//          * یا فیلتر قابل تغییر فعال باشد،
+//          * فیلد مخفی می‌شود.
+//          */
+
+//         if (
+//             fixedFilters[key] ||
+//             active[key]
+//         ) {
+
+//             field.style.display =
+//                 "none";
+
+//         }
+
+//         else {
+
+//             field.style.display =
+//                 "";
+
+//         }
+
+//     });
+
+// }
+/* =========================================
+   وضعیت نمایش فیلدها
+   فقط بر اساس URL اصلی:
+   
+   topic
+   speaker
+   format
+   
+   فیلترهای topicf / speakerf / formatf
+   در نمایش یا مخفی شدن فیلدها نقشی ندارند.
+========================================= */
+
 function updateFilterFieldsVisibility() {
+
+    const urlParams =
+        new URLSearchParams(
+            window.location.search
+        );
+
 
     Object.keys(filterData).forEach(key => {
 
@@ -199,16 +254,17 @@ function updateFilterFieldsVisibility() {
             select.closest(".filter-field");
 
 
-        /*
-         * اگر فیلتر ثابت URL وجود داشته باشد
-         * یا فیلتر قابل تغییر فعال باشد،
-         * فیلد مخفی می‌شود.
-         */
+        if (!field) {
+            return;
+        }
 
-        if (
-            fixedFilters[key] ||
-            active[key]
-        ) {
+
+        /* فقط وجود پارامتر در URL مهم است */
+        const isFixed =
+            urlParams.has(key);
+
+
+        if (isFixed) {
 
             field.style.display =
                 "none";
@@ -359,18 +415,18 @@ function updateFilterButton() {
 
 
     /* حداقل یک فیلد نمایش داده می‌شود */
-    applyButton.style.display =
-        "";
+    // applyButton.style.display =
+    //     "";
 
 
-    const hasNewFilter =
-        topicFilter.value ||
-        speakerFilter.value ||
-        formatFilter.value;
+    // const hasNewFilter =
+    //     topicFilter.value ||
+    //     speakerFilter.value ||
+    //     formatFilter.value;
 
 
-    applyButton.disabled =
-        !hasNewFilter;
+    // applyButton.disabled =
+    //     !hasNewFilter;
 
 }
 
@@ -561,127 +617,166 @@ function updateFilterButton() {
        قابل حذف هستند.
     ========================================= */
 
-    activeFilters.addEventListener(
-        "click",
-        event => {
+    // activeFilters.addEventListener(
+    //     "click",
+    //     event => {
 
-            const button =
-                event.target.closest(
-                    ".remove-filter"
-                );
-
-
-            if (!button) {
-                return;
-            }
+    //         const button =
+    //             event.target.closest(
+    //                 ".remove-filter"
+    //             );
 
 
-            const filter =
-                button.dataset.filter;
+    //         if (!button) {
+    //             return;
+    //         }
 
 
-            /* فقط active را خالی می‌کنیم */
-            active[filter] = "";
+    //         const filter =
+    //             button.dataset.filter;
 
 
-            const newParams =
-                new URLSearchParams();
+    //         /* فقط active را خالی می‌کنیم */
+    //         active[filter] = "";
 
 
-            /* =====================================
-               type
-            ===================================== */
-
-            const currentType =
-                params.get("type");
+    //         const newParams =
+    //             new URLSearchParams();
 
 
-            if (currentType) {
+    //         /* =====================================
+    //            type
+    //         ===================================== */
 
-                newParams.set(
-                    "type",
-                    currentType
-                );
-
-            }
+    //         const currentType =
+    //             params.get("type");
 
 
-            /* =====================================
-               فیلترهای ثابت
+    //         if (currentType) {
+
+    //             newParams.set(
+    //                 "type",
+    //                 currentType
+    //             );
+
+    //         }
+
+
+    //         /* =====================================
+    //            فیلترهای ثابت
                
-               همیشه باقی می‌مانند.
-            ===================================== */
+    //            همیشه باقی می‌مانند.
+    //         ===================================== */
 
-            if (fixedFilters.topic) {
+    //         if (fixedFilters.topic) {
 
-                newParams.set(
-                    "topic",
-                    fixedFilters.topic
-                );
+    //             newParams.set(
+    //                 "topic",
+    //                 fixedFilters.topic
+    //             );
 
-            }
-
-
-            if (fixedFilters.speaker) {
-
-                newParams.set(
-                    "speaker",
-                    fixedFilters.speaker
-                );
-
-            }
+    //         }
 
 
-            if (fixedFilters.format) {
+    //         if (fixedFilters.speaker) {
 
-                newParams.set(
-                    "format",
-                    fixedFilters.format
-                );
+    //             newParams.set(
+    //                 "speaker",
+    //                 fixedFilters.speaker
+    //             );
 
-            }
-
-
-            /* =====================================
-               فیلترهای باقی‌مانده کاربر
-            ===================================== */
-
-            if (active.topic) {
-
-                newParams.set(
-                    "topicf",
-                    active.topic
-                );
-
-            }
+    //         }
 
 
-            if (active.speaker) {
+    //         if (fixedFilters.format) {
 
-                newParams.set(
-                    "speakerf",
-                    active.speaker
-                );
+    //             newParams.set(
+    //                 "format",
+    //                 fixedFilters.format
+    //             );
 
-            }
-
-
-            if (active.format) {
-
-                newParams.set(
-                    "formatf",
-                    active.format
-                );
-
-            }
+    //         }
 
 
-            window.location.href =
-                `results.html?${newParams.toString()}`;
+    //         /* =====================================
+    //            فیلترهای باقی‌مانده کاربر
+    //         ===================================== */
 
+    //         if (active.topic) {
+
+    //             newParams.set(
+    //                 "topicf",
+    //                 active.topic
+    //             );
+
+    //         }
+
+
+    //         if (active.speaker) {
+
+    //             newParams.set(
+    //                 "speakerf",
+    //                 active.speaker
+    //             );
+
+    //         }
+
+
+    //         if (active.format) {
+
+    //             newParams.set(
+    //                 "formatf",
+    //                 active.format
+    //             );
+
+    //         }
+
+
+    //         window.location.href =
+    //             `results.html?${newParams.toString()}`;
+
+    //     }
+    // );
+/* =========================================
+   حذف فیلتر
+       
+   فقط از وضعیت فعلی حذف می‌شود.
+   URL تا زمان زدن «اعمال فیلتر»
+   تغییر نمی‌کند.
+========================================= */
+
+activeFilters.addEventListener(
+    "click",
+    event => {
+
+        const button =
+            event.target.closest(
+                ".remove-filter"
+            );
+
+
+        if (!button) {
+            return;
         }
-    );
 
+
+        const filter =
+            button.dataset.filter;
+
+
+        /* حذف فیلتر از وضعیت فعلی */
+        active[filter] = "";
+
+
+        /* خالی کردن Select */
+        filterData[filter].element.value = "";
+
+
+        /* به‌روزرسانی تگ‌ها و دکمه */
+        renderActiveFilters();
+
+    }
+);
 
     /* =========================================
        مقداردهی Select ها
