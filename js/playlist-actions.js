@@ -145,13 +145,14 @@ async function sharePlaylistContent(contentId) {
            PAGE URL
         ========================= */
 
-        const pageUrl =
-            `${window.location.origin}` +
-            `${window.location.pathname.replace(
-                "playlist.html",
-                "content.html"
-            )}` +
-            `?id=${encodeURIComponent(contentId)}`;
+const pageUrl =
+    `${window.location.origin}` +
+    `${window.location.pathname
+        .replace(
+            /[^/]+$/,
+            "content.html"
+        )}` +
+    `?id=${encodeURIComponent(contentId)}`;
 
 
         /* =========================

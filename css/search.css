@@ -1,0 +1,431 @@
+/* =========================================================
+   SEARCH PAGE
+========================================================= */
+
+.search-page {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SEARCH BOX
+========================================================= */
+
+.search-box {
+    width: 50%;
+    margin-bottom: 32px;
+}
+
+
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 52px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.search-input-wrapper input {
+    flex: 1;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0 18px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: var(--fs-md);
+}
+
+
+.search-input-wrapper input::placeholder {
+    color: var(--text-light);
+}
+
+
+.search-input-wrapper button {
+    width: 56px;
+    height: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--text-light);
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.search-input-wrapper button:hover {
+    color: var(--primary);
+
+    background: var(--primary-soft);
+}
+
+/* =========================================================
+   SEARCH INPUT CLEAR BUTTON
+========================================================= */
+
+.search-input-wrapper input[type="search"]::-webkit-search-cancel-button {
+
+    display:none;
+}
+
+/* =========================================================
+   SEARCH LINKS
+========================================================= */
+
+.search-links {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-start;
+    gap: 28px;
+
+    margin-top: 14px;
+    margin-right: 12px;
+}
+
+
+.search-links a {
+    color: var(--text-light);
+
+    font-size: var(--fs-sm);
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.search-links a:hover {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   RESULTS
+========================================================= */
+
+.search-results-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   RESULT ITEM
+========================================================= */
+
+.search-result-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    width: 100%;
+
+    min-height: 110px;
+
+    padding: 10px 12px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.search-result-item:hover {
+    border-color: var(--primary-light);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   COVER
+========================================================= */
+
+.search-result-cover {
+    flex: 0 0 150px;
+
+    width: 150px;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    border-radius: 7px;
+
+    background: var(--background);
+}
+
+
+.search-result-cover img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   INFO
+========================================================= */
+
+.search-result-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* .search-result-title {
+    overflow: hidden;
+
+    margin-bottom: 8px;
+
+    color: var(--text);
+
+    font-size: var(--fs-md);
+    font-weight: 500;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+} */
+.search-result-title {
+    overflow: hidden;
+    margin-bottom: 8px;
+    color: var(--text);
+    font-size: var(--fs-md);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.search-title-text {
+    display: inline-block;
+    white-space: nowrap;
+    direction: rtl;
+}
+
+/* فقط عنوان‌های بلند حرکت کنند */
+.search-result-title.is-long .search-title-text {
+    animation: search-marquee 40s linear infinite;
+}
+
+@keyframes search-marquee {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+
+}
+
+.search-result-speaker {
+    margin-bottom: 9px;
+
+    color: var(--text-light);
+
+    font-size: var(--fs-sm);
+}
+
+
+.search-result-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    color: var(--text-light);
+
+    font-size: var(--fs-xs);
+}
+
+
+.search-result-meta span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.search-result-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    margin-right: 4px;
+}
+
+
+.search-result-action {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--text-light);
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.search-result-action:hover {
+    color: var(--primary);
+
+    background: var(--primary-soft);
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.search-empty {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: var(--text-light);
+
+    font-size: var(--fs-sm);
+}
+
+
+.playlist-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+
+/* دکمه‌های کپی و ذخیره
+   این دو توسط JS ساخته می‌شوند */
+
+.playlist-actions > div {
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .search-page {
+        width: 100%;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .search-result-item {
+        gap: 12px;
+
+        min-height: 90px;
+
+        padding: 8px;
+    }
+
+
+    .search-result-cover {
+        flex-basis: 110px;
+
+        width: 110px;
+    }
+
+
+    .search-result-title {
+        font-size: var(--fs-sm);
+
+        margin-bottom: 6px;
+    }
+
+
+    .search-result-speaker {
+        margin-bottom: 6px;
+
+        font-size: var(--fs-xs);
+    }
+
+
+    .search-result-actions {
+        display: none;
+    }
+
+
+    .search-links {
+        gap: 20px;
+    }
+
+}

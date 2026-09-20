@@ -844,9 +844,8 @@ function initSearch() {
         const query =
             input.value.trim();
 
-        window.location.href =
-            `results.html?type=search&q=${encodeURIComponent(query)}`;
-
+window.location.href =
+    `search.html?q=${encodeURIComponent(query)}`;
     });
 
 }

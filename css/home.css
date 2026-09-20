@@ -157,6 +157,7 @@
     background: var(--primary);
 
     color: var(--surface);
+    text-decoration: none;
 
     font-family: inherit;
 
@@ -175,7 +176,6 @@
 
     transform: translateY(-2px);
 }
-
 
 /* =========================================================
    SLIDER ARROWS

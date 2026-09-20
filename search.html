@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>سامانه مصباح</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/playlist.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div
+        id="header"
+        data-component="components/header.html">
+    </div>
+
+    <main class="page">
+
+        <!-- ================= SEARCH ================= -->
+
+        <div class="search-box">
+
+            <div class="search-input-wrapper">
+
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="جستجو در مطالب..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    id="search-button"
+                    aria-label="جستجو"
+                >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+            </div>
+
+
+            <div class="search-links">
+
+                <a href="advanced-search.html">
+                    جستجوی پیشرفته
+                </a>
+
+                <a href="ai-search.html">
+                    جستجوی هوش مصنوعی
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= RESULTS ================= -->
+
+        <section class="search-results">
+
+            <div
+                id="search-results-list"
+                class="search-results-list"
+            ></div>
+
+            <div
+                id="search-empty"
+                class="search-empty"
+            >
+                برای جستجو، عبارت مورد نظر خود را وارد کنید.
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <div
+        id="footer"
+        data-component="components/footer.html">
+    </div>
+
+    <script src="js/global.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/playlist-actions.js"></script>
+</body>
+
+</html>

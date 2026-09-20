@@ -533,14 +533,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (
                 clickedButton &&
-                clickedButton.textContent.includes("پیشنهاد")
+                clickedButton.textContent.includes("درخواست")
             ) {
 
                 successTitle.textContent =
-                    "پیشنهاد شما با موفقیت ارسال شد";
+                    "درخواست شما با موفقیت ارسال شد";
 
                 successMessage.textContent =
-                    "با تشکر از شما، پیشنهاد ارسالی ثبت شد. "
+                    "با تشکر از شما، درخواست ارسالی ثبت شد. "
 
             } else {
 

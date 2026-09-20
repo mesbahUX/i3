@@ -304,9 +304,9 @@ function setResultsTitle(type) {
 
         playlist: "مجموعه",
 
-        image: "عکس",
+        // image: "عکس",
 
-        text: "کتاب‌ها و مقاله"
+        // text: "کتاب‌ها و مقاله"
 
     };
 

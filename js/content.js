@@ -190,7 +190,7 @@ function renderVideo(content) {
         content,
         "video-transcript-section",
         "video-transcript",
-        "video-transcript-more"
+        // "video-transcript-more"
     );
 
 
@@ -362,7 +362,7 @@ renderTags(
         content,
         "audio-transcript-section",
         "audio-transcript",
-        "audio-transcript-more"
+        // "audio-transcript-more"
     );
 }
 
@@ -692,26 +692,101 @@ function renderSpeaker(
    TRANSCRIPT
 ========================================================= */
 
+// function renderTranscript(
+//     content,
+//     sectionId,
+//     textId,
+//     buttonId
+// ) {
+
+//     const section = document.getElementById(
+//         sectionId
+//     );
+
+//     if (!section) {
+//         return;
+//     }
+
+
+//     const transcript = getText(
+//         content,
+//         "transcript"
+//     );
+
+
+//     if (!transcript) {
+
+//         section.style.display = "none";
+
+//         return;
+//     }
+
+
+//     section.style.display = "";
+
+
+//     const text = document.getElementById(
+//         textId
+//     );
+
+//     const button = document.getElementById(
+//         buttonId
+//     );
+
+
+//     text.textContent = transcript;
+
+//     text.classList.add("collapsed");
+//     text.classList.remove("expanded");
+
+
+//     button.innerHTML =
+//         `بیشتر
+//          <i class="fa-solid fa-chevron-down"></i>`;
+
+
+//     button.onclick = () => {
+
+//         const expanded =
+//             text.classList.toggle(
+//                 "expanded"
+//             );
+
+//         text.classList.toggle(
+//             "collapsed",
+//             !expanded
+//         );
+
+
+//         button.innerHTML = expanded
+
+//             ? `بستن
+//                <i class="fa-solid fa-chevron-up"></i>`
+
+//             : `بیشتر
+//                <i class="fa-solid fa-chevron-down"></i>`;
+//     };
+// }
+
 function renderTranscript(
     content,
     sectionId,
-    textId,
-    buttonId
+    textId
 ) {
 
-    const section = document.getElementById(
-        sectionId
-    );
+    const section =
+        document.getElementById(sectionId);
 
     if (!section) {
         return;
     }
 
 
-    const transcript = getText(
-        content,
-        "transcript"
-    );
+    const transcript =
+        getText(
+            content,
+            "transcript"
+        );
 
 
     if (!transcript) {
@@ -725,49 +800,16 @@ function renderTranscript(
     section.style.display = "";
 
 
-    const text = document.getElementById(
-        textId
-    );
+    const text =
+        document.getElementById(textId);
 
-    const button = document.getElementById(
-        buttonId
-    );
+    if (!text) {
+        return;
+    }
 
 
     text.textContent = transcript;
-
-    text.classList.add("collapsed");
-    text.classList.remove("expanded");
-
-
-    button.innerHTML =
-        `بیشتر
-         <i class="fa-solid fa-chevron-down"></i>`;
-
-
-    button.onclick = () => {
-
-        const expanded =
-            text.classList.toggle(
-                "expanded"
-            );
-
-        text.classList.toggle(
-            "collapsed",
-            !expanded
-        );
-
-
-        button.innerHTML = expanded
-
-            ? `بستن
-               <i class="fa-solid fa-chevron-up"></i>`
-
-            : `بیشتر
-               <i class="fa-solid fa-chevron-down"></i>`;
-    };
 }
-
 
 /* =========================================================
    FORMAT TIME

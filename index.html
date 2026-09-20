@@ -52,11 +52,14 @@
                             مجموعه‌ای از سخنرانی‌ها و مطالب درباره توحید و شناخت خداوند
                         </p>
 
-                        <button class="hero-slide-btn">
+                        <!-- <button class="hero-slide-btn">
                             مشاهده مطالب
                             <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-
+                        </button> -->
+<a href="content.html?id=1" class="hero-slide-btn">
+    مشاهده مطالب
+    <i class="fa-solid fa-arrow-left"></i>
+</a>
                     </div>
                 </div>
 
@@ -81,11 +84,14 @@
                             نگاهی به زندگی، سیره و شخصیت کریم اهل‌بیت
                         </p>
 
-                        <button class="hero-slide-btn">
+                        <!-- <button class="hero-slide-btn">
                             مشاهده مطالب
                             <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-
+                        </button> -->
+<a href="content.html?id=6" class="hero-slide-btn">
+    مشاهده مطالب
+    <i class="fa-solid fa-arrow-left"></i>
+</a>
                     </div>
                 </div>
 
@@ -109,11 +115,14 @@
                             مجموعه‌ای از سخنرانی‌ها درباره زندگی و تاریخ امیرالمؤمنین
                         </p>
 
-                        <button class="hero-slide-btn">
+                        <!-- <button class="hero-slide-btn">
                             مشاهده مطالب
                             <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-
+                        </button> -->
+<a href="playlist.html?id=2" class="hero-slide-btn">
+    مشاهده مطالب
+    <i class="fa-solid fa-arrow-left"></i>
+</a>
                     </div>
                 </div>
 
@@ -154,9 +163,146 @@
 
         <!-- ================= FILTER ================= -->
 
-        <div
-            id="filter"
-            data-component="components/filter.html">
+        <div class="filter-fields">
+
+            <!-- موضوع -->
+            <div class="filter-field">
+
+                <select id="home-topic-filter">
+
+                    <option value="">
+                        همه موضوعات
+                    </option>
+
+                    <option value="quran">
+                        قرآن
+                    </option>
+
+                    <option value="ahlulbayt">
+                        چهارده معصوم
+                    </option>
+
+                    <option value="prophets">
+                        پیامبران
+                    </option>
+
+                    <option value="hadith">
+                        حدیث
+                    </option>
+
+                    <option value="history">
+                        تاریخ
+                    </option>
+
+                    <option value="seerah">
+                        سیره
+                    </option>
+
+                    <option value="arabic">
+                        قواعد عربی
+                    </option>
+
+                    <option value="aqeedah">
+                        کلام و عقاید
+                    </option>
+
+                    <option value="fiqh">
+                        فقه و احکام
+                    </option>
+
+                    <option value="ethics">
+                        اخلاق
+                    </option>
+
+                    <option value="family">
+                        خانواده
+                    </option>
+
+                    <option value="islamic-sciences">
+                        علوم اسلامی
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- نام سخنران -->
+            <div class="filter-field">
+
+                <select id="home-speaker-filter">
+
+                    <option value="">
+                        همه پدید آوران
+                    </option>
+
+                    <option value="speaker1">
+                        سخنران 1
+                    </option>
+
+                    <option value="speaker2">
+                        سخنران 2
+                    </option>
+
+                    <option value="speaker3">
+                        سخنران 3
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- قالب -->
+            <div class="filter-field">
+
+                <select id="home-format-filter">
+
+                    <option value="">
+                        همه قالب‌ها
+                    </option>
+
+                    <option value="video">
+                        ویدیو
+                    </option>
+
+                    <option value="audio">
+                        صوت
+                    </option>
+
+                    <option value="playlist">
+                        مجموعه
+                    </option>
+
+                    <!-- <option value="image">
+                        عکس
+                    </option>
+
+                    <option value="text">
+                        کتاب و مقالات
+                    </option> -->
+
+                </select>
+
+            </div>
+        
+            <!-- دکمه اعمال -->
+            <button
+                type="button"
+                class="filter-button"
+                id="home-apply-filter"
+            >
+
+                <i class="fa-solid fa-sliders"></i>
+
+                <!-- اعمال فیلتر -->
+                 فیلتر
+
+            </button>
+
+            <!-- فیلترهای فعال -->
+            <div
+                class="active-filters"
+                id="home-active-filters"
+            ></div>
         </div>
 
         <!-- =====================================================
@@ -170,7 +316,7 @@
             </h2>
 
             <!-- ---------------- VIDEO ---------------- -->
-            <section class="content-row">
+            <section class="content-row" data-format="video">
 
                 <div class="content-row-header">
 
@@ -200,7 +346,7 @@
             </section>
 
             <!-- ---------------- AUDIO ---------------- -->
-            <section class="content-row">
+            <section class="content-row" data-format="audio">
 
                 <div class="content-row-header">
 
@@ -230,7 +376,7 @@
             </section>
 
             <!-- -------------- PLAYLISTS -------------- -->
-            <section class="content-row">
+            <section class="content-row" data-format="playlist">
 
                 <div class="content-row-header">
 
@@ -270,7 +416,7 @@
             </h2>
             
             <!-- ---------------- VIDEO ---------------- -->
-            <section class="content-row">
+            <section class="content-row" data-format="video">
 
                 <div class="content-row-header">
 
@@ -300,7 +446,7 @@
             </section>
 
             <!-- ---------------- AUDIO ---------------- -->
-            <section class="content-row">
+            <section class="content-row" data-format="audio">
 
                 <div class="content-row-header">
 
@@ -369,7 +515,7 @@
             </section> -->
 
             <!-- ---------------- VIDEO ---------------- -->
-            <section class="content-row">
+            <section class="content-row" data-format="video">
 
                 <div class="content-row-header">
 
@@ -399,7 +545,7 @@
             </section>
 
             <!-- ---------------- AUDIO ---------------- -->
-            <section class="content-row">
+            <section class="content-row" data-format="audio">
 
                 <div class="content-row-header">
 
@@ -424,6 +570,36 @@
                     data-xml="data/contents2.xml"
                     data-type="audio"
                     data-ids="20-39"
+                ></div>
+
+            </section>
+
+            <!-- -------------- PLAYLISTS -------------- -->
+            <section class="content-row" data-format="playlist">
+
+                <div class="content-row-header">
+
+                    <h2>
+                        <!-- فهرست‌های پخش -->
+                         مجموعه‌ها
+                    </h2>
+
+                    <a
+                        href="results.html?type=upcoming&format=playlist"
+                        class="view-all"
+                    >
+                        مشاهده همه
+
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="content-slider"
+                    data-xml="data/playlists.xml"
+                    data-type="playlist"
                 ></div>
 
             </section>
@@ -512,9 +688,10 @@
 
     <script src="js/global.js"></script>
     <script src="js/home.js"></script>
-    <script src="js/filter.js"></script>
     <script src="js/cards.js"></script>
     <script src="js/rows.js"></script>
+    <script src="js/home-filter.js"></script>
+    <script src="js/home-content-filter.js"></script>
 
 </body>
 

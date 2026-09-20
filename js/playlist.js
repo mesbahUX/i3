@@ -413,7 +413,55 @@ if (navigator.share) {
     }
 
 }
+function checkPlaylistTitleOverflow(card) {
 
+    const titleElement =
+        card.querySelector(".playlist-content-title");
+
+    const titleText =
+        card.querySelector(".playlist-title-text");
+
+    if (!titleElement || !titleText) {
+        return;
+    }
+
+    const originalTitle =
+        titleText.dataset.originalTitle ||
+        titleText.textContent;
+
+    titleText.dataset.originalTitle =
+        originalTitle;
+
+    /* اول عنوان را به حالت اصلی برمی‌گردانیم */
+    titleElement.classList.remove("is-long");
+
+    titleText.textContent =
+        originalTitle;
+
+    requestAnimationFrame(() => {
+
+        const textWidth =
+            titleText.scrollWidth;
+
+        const containerWidth =
+            titleElement.clientWidth;
+
+        if (textWidth > containerWidth) {
+
+            titleText.textContent =
+                  originalTitle + "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"
+                + originalTitle + "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"
+                + originalTitle + "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"
+                + originalTitle + "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"
+                + originalTitle;
+
+            titleElement.classList.add("is-long");
+
+        }
+
+    });
+
+}
 /* =========================================================
    RENDER CONTENTS
 ========================================================= */
@@ -597,45 +645,21 @@ function renderPlaylistContents(contents) {
 
 
         container.appendChild(card);
-
-const titleElement =
-    card.querySelector(".playlist-content-title");
-
-const titleText =
-    card.querySelector(".playlist-title-text");
-
-if (titleElement && titleText) {
-
-    requestAnimationFrame(() => {
-
-        const textWidth =
-            titleText.scrollWidth;
-
-        const containerWidth =
-            titleElement.clientWidth;
-
-
-        if (textWidth > containerWidth) {
-
-            /* چند فاصله به انتهای عنوان */
-
-            titleText.textContent =
-                  title + "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"
-                + title + "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"
-                + title + "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"
-                + title + "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"
-                + title;
-
-
-            titleElement.classList.add("is-long");
-
-        }
-
-    });
-
-}
+        checkPlaylistTitleOverflow(card);
 
         loadPlaylistSaveStates();
 
     });
 }
+
+window.addEventListener("resize", () => {
+
+    document
+        .querySelectorAll(".playlist-content-item")
+        .forEach(card => {
+
+            checkPlaylistTitleOverflow(card);
+
+        });
+
+});

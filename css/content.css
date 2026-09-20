@@ -195,24 +195,38 @@
     margin-top: .8rem;
 }
 
-.transcript-text {
+/* .transcript-text {
     color: var(--text-light);
     font-size: .92rem;
     line-height: 2;
 
     overflow: hidden;
     white-space: pre-line;
+} */
+
+.transcript-text {
+    color: var(--text-light);
+    font-size: .92rem;
+    line-height: 2;
+
+    white-space: pre-line;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
 }
 
-.transcript-text.collapsed {
+/* .transcript-text.collapsed {
     max-height: 4rem;
 }
 
 .transcript-text.expanded {
     max-height: 3000px;
-}
+} */
 
-.transcript-more {
+/* .transcript-more {
     display: inline-flex;
     align-items: center;
     gap: .4rem;
@@ -233,7 +247,7 @@
 .transcript-more i {
     font-size: .65rem;
     transition: transform .2s ease;
-}
+} */
 
 
 /* =========================================================
