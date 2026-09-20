@@ -408,33 +408,85 @@ document.addEventListener("DOMContentLoaded", () => {
         ORIGINAL CONTENT
         ========================= */
 
-        function renderOriginalUploadBox() {
+        // function renderOriginalUploadBox() {
 
-            const title =
-                uploadBox.querySelector(
-                    ".upload-files-title"
-                );
+        //     const title =
+        //         uploadBox.querySelector(
+        //             ".upload-files-title"
+        //         );
 
-            title?.remove();
-
-
-            const list =
-                uploadBox.querySelector(
-                    ".upload-file-list"
-                );
-
-            list?.remove();
+        //     title?.remove();
 
 
-            const hint =
-                uploadBox.querySelector(
-                    ".upload-file-hint"
-                );
+        //     const list =
+        //         uploadBox.querySelector(
+        //             ".upload-file-list"
+        //         );
 
-            hint?.remove();
+        //     list?.remove();
 
-        }
 
+        //     const hint =
+        //         uploadBox.querySelector(
+        //             ".upload-file-hint"
+        //         );
+
+        //     hint?.remove();
+
+        // }
+function renderOriginalUploadBox() {
+
+    /* حذف محتوای مربوط به فایل‌های انتخاب‌شده */
+
+    uploadBox.querySelector(
+        ".upload-files-title"
+    )?.remove();
+
+    uploadBox.querySelector(
+        ".upload-file-list"
+    )?.remove();
+
+    uploadBox.querySelector(
+        ".upload-file-hint"
+    )?.remove();
+
+
+    /* برگرداندن محتوای اولیه */
+
+    const icon =
+        document.createElement("i");
+
+    icon.className =
+        "fa-solid fa-cloud-arrow-up";
+
+
+    const title =
+        document.createElement("h3");
+
+    title.textContent =
+        "فایل خود را اینجا آپلود کنید";
+
+
+    const text =
+        document.createElement("p");
+
+    text.textContent =
+        "برای انتخاب فایل کلیک کنید یا فایل را اینجا بکشید";
+
+
+    const span =
+        document.createElement("span");
+
+    span.textContent =
+        "حداکثر حجم فایل: 100MB";
+
+
+    uploadBox.appendChild(icon);
+    uploadBox.appendChild(title);
+    uploadBox.appendChild(text);
+    uploadBox.appendChild(span);
+
+}
 
         /* =========================
         FILE ICON
